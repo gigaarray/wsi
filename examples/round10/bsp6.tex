@@ -1,0 +1,58 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:10.6]
+$(X_1 , \dots , X_4 )$ seien unabhängig mit $\mathbb{P}(X_i = 1) = 0.9, \mathbb{P}(X_i = 0) = 0.1.$
+Bestimmen Sie $H^* (X_1 , \dots X_n )$ für $n = 1, \dots , 4$ und vergleichen Sie mit
+der Entropie.
+\end{Exercise}
+\begin{Answer}
+Da $(X_1 , \dots , X_4 )$ unabhängig sind können die Wahrscheinlichkeiten multipliziert werden:\\
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+$N^o$ & $(X_1 , \dots , X_4 )$ & $\mathbb{P}(X_1, \dots X_4)$ in $\frac{1}{10000}$ \\\hline
+    1 & 0000 & 1 \\\hline
+    2 & 0001 & 9 \\\hline
+    3 & 0010 & 9 \\\hline
+    4 & 0011 & 81 \\\hline
+    5 & 0100 & 9 \\\hline
+    6 & 0101 & 81 \\\hline
+    7 & 0110 & 81 \\\hline
+    8 & 0111 & 729 \\\hline
+    9 & 1000 & 9 \\\hline
+    10 & 1001 & 81 \\\hline
+    11 & 1010 & 81 \\\hline
+    12 & 1011 & 729 \\\hline
+    13 & 1100 & 81 \\\hline
+    14 & 1101 & 729 \\\hline
+    15 & 1110 & 729 \\\hline
+    16 & 1111 & 6561 \\\hline
+\end{tabular}
+\end{center}
+
+
+Die Wahrscheinlichkeiten werden anschließend sortiert und mit dem Huffman-Algorithmus in einen Binärbaum umgewandelt (wird hier aus Platzgründen nicht gemacht). An Hand des Binärbaums lassen sich dann die Blattlängen $l_i$ ablesen. 
+Am Ende ergibt dass:\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline Anzahl & $\mathbb{P}(X_1, \dots X_4)$ & Blattlänge $l_i$ \\\hline
+1 & 6561 & 1 \\\hline
+3 & 729 & 3 \\\hline
+1 & 729 & 4 \\\hline
+1 & 81 & 6 \\\hline
+5 & 81 & 7 \\\hline
+3 & 9 & 9 \\\hline
+1 & 9 & 10 \\\hline
+1 & 1 & 10\\\hline 
+\end{tabular}\\
+\end{center}
+
+
+Ergibt eine mittlere Unbestimmtheit: \\
+$H^*(X_1, \dots X_4) = \sum_{i=1}^{16} p_i l_i = 1.9702$\\
+
+Verglichen mit der Entropie:\\
+$H(X_1, \dots X_4) = 4 H(X_1) = 0.46$
+
+\end{Answer}
+\end{uebsp}

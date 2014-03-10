@@ -1,0 +1,64 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:4.1]
+Zwei Spieler A und B mit Kapital $a$ und $b$ spielen folgendes Spiel: In jeder Runde setzt jeder Spieler einen Einsatz 1. Dann wird eine Münze geworfen, und A gewinnt, wenn sie ''Kopf'' zeigt, sonst gewinnt B. Das Spiel ist zu Ende, wenn ein Spieler kein Kapital mehr hat. Überlegen Sie, dass $X_t$, das Kapital von A zum Zeitpunkt $t$, eine Markovkette bildet, bestimmen Sie die Übergangsmatrix und die Klassen und ihre Perioden.
+\end{Exercise}
+\begin{Answer}
+
+\begin{uebsp_theory}
+    Bei Markovketten 1.Ordnung hängt die Zukunft nur von der Gegenwart (dem aktuellen Zustand) ab.
+\end{uebsp_theory}
+
+\begin{description}
+    \item [Die Markovkette]:\\
+        \input{examples/round4/markov_a}
+    \item [Die Übergangsmatrix]:
+\[P=\left(\begin{array}{cccccc}
+    1 & 0 & 0 & 0 & \cdot\cdot\cdot & 0\\
+    1/2 & 0 & 1/2 & 0 & \cdot\cdot\cdot & 0\\
+    0 & 1/2 & 0 & 1/2 & \cdot\cdot\cdot & 0\\
+    0 & 0 & 1/2 & 0 & \cdot\cdot\cdot & 0\\
+    \vdots & \vdots & \vdots & \vdots& \ddots & \vdots\\
+    0 & 0 & 0 & 0 & \cdot\cdot\cdot & 1\\
+\end{array}\right)\text{\parbox{0.5\linewidth}{Wobei man hier links oben bzw. rechts unten gut die absorbierenden Zustände sieht.}}\]
+
+\begin{uebsp_theory}
+    Der Zustand $j$ heißt \reference{Nachfolger}{Definition}{def:nachfolger} von $i$ ($i\rightarrow j$), wenn es ein $t\ge 0$ gibt, sodass $p_{ij}(t)>0$.\index{Nachfolger!Beispiel}\\
+    Wenn sowohl $i\rightarrow j$ als auch $j\rightarrow i$ gilt, dann heißen $i$ und $j$ verbunden oder kommunizierend.
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Die \reference{Übergangswahrscheinlichkeit}{Section}{sec:uebergangswahrscheinlichkeit} ist definiert als \[p_{ij}\mathbb P(X_{n+1}=j|X_n=i)\] und gibt die Wahrscheinlichkeit des übergangs vom Zustand $i$ zum Zustand $j$ an. \index{"Ubergangswahrscheinlichkeit@Übergangswahrscheinlichkeit!Beispiel}
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Eine Eigenschaft heißt \reference{Klasseneigenschaft}{Definition}{def:klasseneigenschaft}, wenn sie entweder für alle Zustände einer Klasse oder für keinen gilt.
+    \index{Klasseneigenschaft!Beispiel}
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Ein \reference{Absorbierender Zustand}{Klasseneigenschaften}{sec:klasseneigenschaften} ist als eigene Klasse definiert.
+    \index{absorbierender Zustand!Beispiel}
+\end{uebsp_theory}
+
+    \item [Klassen]:
+        \begin{itemize}
+            \item $C_1={0}$
+            \item $C_2={1,2,3,...,a+b-1}$
+            \item $C_3={a+b}$ 
+        \end{itemize}
+
+\begin{uebsp_theory}
+    Die \reference{Periode}{Definition}{def:periode} eines Zustandes ist:
+    \index{Periode!Beispiel}
+    \[d(i)=\mathrm{ggT}\{t\ge 0:p_{ii}(t)>0\}.\]
+\end{uebsp_theory}
+
+    \item [Perioden]:
+        \begin{itemize}
+            \item $d(0)=ggT\{1\}=1$
+            \item $d({1,2,3,...,a+b-1})=ggT\{2,4,6,8,...\}=2$ (denn man benötigt mindestens $2,4,6,8,...$ Schritte, um vom Zustand $i$ wieder zum Zustand $i$ zurückzukehren.)
+            \item $d(a+b)=ggT\{1\}=1$
+        \end{itemize}
+\end{description}
+\end{Answer}
+\end{uebsp}

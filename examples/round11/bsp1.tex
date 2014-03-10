@@ -1,0 +1,42 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:11.1]
+Eine Markovquelle mit drei Zuständen
+\begin{align}\begin{pmatrix}
+0.7 & 0.2 & 0.1 \\ 
+0.1 & 0.7 & 0.2 \\ 
+0.1 & 0.3 & 0.6
+\end{pmatrix}
+\end{align}
+Bestimmen Sie die Entropie dieser Quelle.
+\end{Exercise}
+\begin{Answer}
+\index{Entropie!der Quelle!Beispiel}
+Zuerst benötigen wir die stationäre Verteilung:\\
+$\pi^* = \pi^* P \Rightarrow$
+Die Matrix P besitzt zum Eigenwert 1 den Eigenvektor 
+$\begin{pmatrix}
+1\\
+1\\
+1
+\end{pmatrix}$\\
+Zusätzlich gilt:\\
+$\pi_1 + \pi_2 + \pi_3 = 1$\\
+
+Ergibt eine stationäre Verteilung von:\\
+$\pi^* = \begin{pmatrix}
+1/3\\
+1/3\\
+1/3
+\end{pmatrix}$\\
+
+und eine Entropie von:
+$H(X) = \sum \pi_i H(P_i)$\\
+$\displaystyle = \frac{1}{3} (0.7 log_2(\frac{1}{0.7}) + 0.2 log_2(\frac{1}{0.2}) + 0.1 log_2(\frac{1}{0.1}))$\\
+
+
+$\displaystyle + \frac{1}{3} (0.1 log_2(\frac{1}{0.1}) + 0.7 log_2(\frac{1}{0.7}) + 0.2 log_2(\frac{1}{0.2}))$\\
+
+
+$\displaystyle + \frac{1}{3} (0.1 log_2(\frac{1}{0.1}) + 0.3 log_2(\frac{1}{0.3}) + 0.6 log_2(\frac{1}{0.6}))$
+\end{Answer}
+\end{uebsp}

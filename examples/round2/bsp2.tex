@@ -1,0 +1,71 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.2]
+Es sei \\ 
+\[ F(x) = \left\{
+  \begin{array}{l l}
+    0 & \quad \text{für $x < 0$}\\
+    \frac{{x}^{2}}{4}  & \quad \text{für $0 \le x < 1$} \\
+    \frac{x}{2} & \quad \text{für $1 \le x < 2$} \\
+    1 & \quad \text{für $x \ge 2$}
+  \end{array} \right.\]
+\Question
+Zeigen Sie, dass $F$ eine Verteilungsfunktion ist.
+\Question
+$X$ sei nach $F$ verteilt. Bestimmen Sie $\mathbb{P}(X < 1)$, $\mathbb{P}(X \le 1)$, $\mathbb{P}(X = 0$),$\mathbb{P}(X = 1)$, $\mathbb{P}(X = 2)$.
+\end{Exercise}
+\begin{Answer}
+    \index{Verteilungsfunktion!Eigenschaften!Beispiel}
+\begin{enumerate}[(a)]
+    \item{
+        Die Kriterien für eine \reference{Verteilungsfunktion}{Definition}{def:verteilungsfunktion_eigenschaften} lauten:
+    	\begin{uebsp_theory}
+    	$F:\mathbb R\to\mathbb R$ ist genau dann eine Verteilungsfunktion, wenn
+    	\begin{enumerate}
+    	\item $0\le F(x)\le 1$ für alle $x$,
+    	\item $F$ ist monoton nichtfallend,
+    	\item $F$ ist rechtsstetig,
+    	\item $\lim_{x\to-\infty}F(x)=0$,
+    	\item $\lim_{x\to\infty}F(x)=1$.
+    	\end{enumerate}
+    	\end{uebsp_theory}
+    	
+    	Wie wir sehen sind die Punkte alle erfüllgt:
+    	
+    	\begin{enumerate}
+    	\item  \checkmark : Die Werte die $x^{2}$ (bei $0 \le x < 1$) annehmen kann liegen im Bereich [0;1[ selbes gilt für $\frac{x^{2}}{4}$. Auch die Werte für $\frac{x}{2}$ (bei $1 \le x < 2$ ) liegen im Bereich [0,5;1[.
+    	\item  \checkmark : Sowohl  $\frac{x^{2}}{4}$ als auch $\frac{x}{2}$ sind monoton steigend.
+    	\item \checkmark : erfüllt
+    	\item \checkmark : erfüllt
+    	\item \checkmark : erfüllt
+    	\end{enumerate}
+    	
+    	
+    }
+  
+\item Diese Wahrscheinlichkeiten lassen sich am besten aus der Verteilungsfunktion berechnen:
+    \index{Wahrscheinlichkeiten mit Verteilungsfunktion!Beispiel}
+    \begin{uebsp_theory}
+        Mit den \reference{Wahrscheinlichkeiten mithilfe der Verteilungsfunktion}{Kapitel}{sec:wahrscheinlichkeiten_verteilungsfunktionen} folgt:
+        \[\mathbb P(X\le a)=F_X(a),\]
+        \[\mathbb P(X<a)=F_X(a-0),\]
+        \[\mathbb P(a< X\le b)=F_X(b)-F_X(a),\]
+        \[\mathbb P(a< X< b)=F_X(b-0)-F_X(a),\]
+        \[\mathbb P(a\le X\le b)=F_X(b)-F_X(a-0),\]
+        \[\mathbb P(a\le X< b)=F_X(b-0)-F_X(a-0).\]
+        \[\mathbb P( X= a)=F_X(a)-F_X(a-0).\]
+    Dabei ist $F(x-0)=\lim_{h\downarrow 0}F(x-h)$ der linksseitige Grenzwert
+    von $F$ in $x$. \\
+    \end{uebsp_theory}
+    
+    Daraus ergibt sich für unser Beispiel: \\
+   	\begin{itemize}
+   	\item $\mathbb{P}(X < 1)=F_X(1-0)=\frac{1}{4}$
+   	\item $\mathbb{P}(X \le 1)=F_X(1)=\frac{1}{2}$
+   	\item $\mathbb{P}(X = 0)=F_X(0)-F_X(0-0)=\frac{0^{2}}{4}-0=0$
+   	\item $\mathbb{P}(X = 1)=F_X(1)-F_X(1-0)=\frac{1}{2}-\frac{1^{2}}{4}=\frac{1}{4}$
+   	\item $\mathbb{P}(X = 2)=F_X(2)-F_X(2-0)=1-\frac{2}{2}=0$
+   	\end{itemize}
+    
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

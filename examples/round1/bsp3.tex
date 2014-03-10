@@ -1,0 +1,61 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:1.3]
+Beim norddeutschen Bingo (“die Umweltlotterie”) werden $22$ Zahlen aus
+{1, . . . 75} ohne Zurücklegen gezogen. Die Wettscheine sind Quadrate mit 5 × 5 Feldern. In der ersten Spalte stehen Zahlen zwischen $1$ und $15$, in der zweiten Zahlen von $16$ bis $30$ usw.
+\Question
+Bestimmen Sie die Wahrscheinlichkeit, dass keine Zahlen aus der ersten Spalte (also zwischen 1 und 15) gezogen werden.
+\Question
+Bestimmen Sie die Wahrscheinlichkeit, dass mindestens 8 Zahlen aus
+der ersten Spalte gezogen werden.
+\end{Exercise}
+\begin{Answer}
+\begin{enumerate}[(a)]
+    \item Mit der 
+        \begin{uebsp_theory}
+        \reference{Definition der bedingten Wahrscheinlichkeit}{Definition}{def:bedingte_wahrscheinlichkeit} folgt:\index{bedingte Wahrscheinlichkeit!Beispiel}
+        \[\mathbb P(A|B)={\mathbb P(A\cap B)\over \mathbb P(B)}\]
+        \end{uebsp_theory}
+
+        Ereignisse: \\
+        $A_1\;\Rightarrow\;1.$ Zahl liegt zwischen $16-75$: $\mathbb{P}(A_1)=\frac{60}{75}$\\
+        $A_2\;\Rightarrow\;2.$ Zahl liegt zwischen $16-75$: $\mathbb{P}(A_2|A_1)=\frac{59}{74}$\\
+        $A_3\;\Rightarrow\;3.$ Zahl liegt zwischen $16-75$: $\mathbb{P}(A_3|A_1\cap A_2)=\frac{58}{73}$\\
+        $A_4\;\Rightarrow\;4.$ Zahl liegt zwischen $16-75$: $\mathbb{P}(A_4|A_1\cap A_2\cap A_3)=\frac{57}{72}$\\
+        ...\\
+        $A_{22}\;\Rightarrow\;22.$ Zahl liegt zwischen $16-75$: $\mathbb{P}(A_{22}|A_1\cap A_2\cap ...\cap A_{21})=\frac{39}{54}$\\
+
+        \begin{uebsp_theory}
+        Mit dem \reference{Multiplikationssatz}{Satz}{satz:multiplikationssatz} 
+        \index{Multiplikationssatz!Beispiel}
+        \[\mathbb P(A_1\cap\dots\cap A_n)=\mathbb P(A_1)\mathbb P(A_2|A_1)\mathbb P
+        (A_3|a_1\cap A_2)\dots\mathbb P(A_n|A_1\cap\dots\cap A_{n-1}).\]
+        folgt:
+        \end{uebsp_theory}
+
+        \[\Rightarrow \mathbb{P}(A_1\cap A_2\cap ...\cap A_{22})=\mathbb{P}(A_1)\cdot\mathbb{P}(A_2|A_1)\cdot ...\cdot \mathbb{P}(A_{22}|A_1\cap A_2\cap ... A_{21})\]
+        \[\Rightarrow \mathbb{P}(A_1\cap A_2\cap ...\cap A_{22})=\frac{60}{75}\cdot \frac{59}{74}\cdot \frac{58}{73}\cdot ...\cdot \frac{39}{54}=\dfrac{60!}{38!}\cdot\frac{53!}{75!}\approx 0.002741\approx 0.3\%\]
+
+        \item Wenn man sich vorstellt, dass es 2 Gruppen von Zahlen gibt: jene, die zwischen 1 und 15 liegen und jene, die darüber liegen: $\Rightarrow \mathbb{P}(mind. 8)=\mathbb{P}(8)+\mathbb{P}(9)+\mathbb{P}(10)+...+\mathbb{P}(15)$ (mehr als 15 geht nicht)\\
+
+        \begin{uebsp_theory}
+            Mit der \reference{Hypergeometrischen Verteilung}{Kapitel}{sec:hypergeometrische_verteilung} 
+            \[p(x)={{A\choose x}{N-A\choose n-x}\over {N\choose n}}.\]
+            folgt:
+            \index{Hypergeometrische Verteilung!Beispiel}
+        \end{uebsp_theory}
+            \[\Rightarrow h(k|N,A,n)\;k=8-15,\;N=75,\;A=15,\;n=22\]
+            \[h(8|75,15,22)=\frac{\binom{15}{8}\cdot \binom{75-15}{22-8}}{\binom{75}{22}}\approx 0.0216\]
+            \[h(9|75,15,22)=\frac{\binom{15}{9}\cdot \binom{75-15}{22-9}}{\binom{75}{22}}\approx 0.005\]
+            \[h(10|75,15,22)=\frac{\binom{15}{10}\cdot \binom{75-15}{22-10}}{\binom{75}{22}}\approx 0.0008\]
+            \[h(11|75,15,22)=\frac{\binom{15}{11}\cdot \binom{75-15}{22-11}}{\binom{75}{22}}\approx 0.0001\]
+            \[h(12|75,15,22)=\frac{\binom{15}{12}\cdot \binom{75-15}{22-12}}{\binom{75}{22}}\approx 0\]
+            \[...\]
+            \[h(15|75,15,22)=\frac{\binom{15}{15}\cdot \binom{75-15}{22-15}}{\binom{75}{22}}\approx 0\]
+            \begin{align*}
+                \mathbb{P}(mind.8)&=\mathbb{P}(8)+\mathbb{P}(9)+\mathbb{P}(10)+...+\mathbb{P}(15)\approx0.0216+0.005+0.0008+0.0001\approx\\
+                \mathbb{P}(mind.8)&\approx0.0275\approx3\%
+            \end{align*}
+
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

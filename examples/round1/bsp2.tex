@@ -1,0 +1,37 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:1.2]
+Von einer Krankheit sind 2\% der Bevölkerung betroffen. Ein Test gibt
+bei einem Kranken mit Wahrscheinlichkeit 0.99 ein positives Ergebnis bei
+einem Gesunden mit Wahrschinlichkeit 0.01.
+\Question
+Bestimmen Sie die Wahrscheinlichkeit, dass eine zufällig gewählte Person positiv getestet wird.
+\Question
+Bestimmen Sie die bedingte Wahrscheinlichkeit dafür, dass eine zufällig gewählte Person krank ist, wenn das Testergebnis positiv ist.
+\end{Exercise}
+\begin{Answer}
+\begin{enumerate}[(a)]
+    \item In diesem Fall gibt es 2 Möglichkeiten:
+        \begin{enumerate}[i)]
+            \item Person ist krank und der Test ist positiv ($A\cap B$)
+            \item Person ist gesund und der Test ist positiv ($A^c\cap B)$
+        \end{enumerate}
+        \begin{uebsp_theory}
+        Mit dem \reference{Satz der vollständigen Wahrscheinlichkeit}{Satz}{satz:vollstaendige_wahrscheinlichkeit}
+        \[\mathbb P(A)=\sum_i\mathbb P(B_i)\mathbb P(A|B_i).\]
+        folgt:
+        \end{uebsp_theory}
+        \index{vollständige Wahrscheinlichkeit, Satz!Beispiel}
+        \[\mathbb{P}(B)=\mathbb{P}(B|A)\cdot\mathbb{P}(A)+\mathbb{P}(B|A^c)\cdot\mathbb{P}(A^c)\]
+        \[\mathbb{P}(B)=\frac{99}{100}\cdot\frac{2}{100}+\frac{1}{100}\cdot\frac{98}{100}=\frac{198}{10k}+\frac{98}{10k}=\frac{296}{10k}\approx3\%\]
+    \item $\mathbb{P}(A|B)$ ist gesucht: 
+        \begin{uebsp_theory}
+            Mit der \reference{Bedingten Wahrscheinlichkeit}{Definition}{def:bedingte_wahrscheinlichkeit} und dem \reference{Satz von Bayes}{Satz}{satz:bayes}
+            \[\mathbb P(B|A)=\frac{\mathbb P(B)\mathbb P(A|B)}{\mathbb P(A)}\]
+            folgt:
+            \index{bedingte Wahrscheinlichkeit!Beispiel}
+        \end{uebsp_theory}
+        \[\mathbb{P}(A|B)=\frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}=\frac{\frac{99}{100}\cdot\frac{2}{100}}{\frac{296}{10k}}=\frac{99\cdot 2}{10k}\cdot\frac{10k}{296}\approx 0.669\approx 67\%\]
+
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

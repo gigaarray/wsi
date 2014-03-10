@@ -1,0 +1,34 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:9.1]
+Bestimmen Sie den Likelihoodquotiententest für $H_0:\lambda=\lambda_0$ gegen $H_1:\lambda=\lambda_1$ einer Poissonverteilung (für $\lambda_0<\lambda_1$).
+\end{Exercise}
+\begin{Answer}
+\index{Likelihoodquotiententest!Beispiel}
+\index{Log-Likelihood-Funktion!Beispiel}
+\index{Multiplikationssatz für Likelihood-Funktionen!Beispiel}
+\begin{uebsp_theory}
+Die \reference{Likelihoodfunktion}{Definition}{def:likelihoodfunktion} in unserem Fall (diskrete Zufallsvariable) ist definiert, als 
+\[L(X;\lambda)=\mathbb P_\lambda(X)\;\;\text{ bzw. }\;\;\ln L(X;\lambda)=l(X;\lambda)\]
+und da es sich um unabhängige Zufallsvariablen $X$ handelt, gilt der \reference{Multiplikationssatz}{Definition}{def:multiplikationssatz_likelihood}
+\[L(\vec X;\lambda)=\prod_{i=1}^nf_\lambda(X)\]
+bzw. für die Log-Likelihood:
+\[\ln L(\vec X;\lambda)=l(\vec X;\lambda)=\sum_{i=1}^nl(X_i;\lambda)\]
+Der \reference{Likelihoodquotientest für Hypothesen}{Definition}{def:likelihoodquotientenstatistik} $H_0:\{\lambda_0\}$ und $H_1:\{\lambda_1\}$:
+\[L(X_1,...,X_n)=\frac{L(X_1,...,X_n,\lambda_0)}{L(X_1,...,X_n,\lambda_1)}\]
+$H_0$ annehmen, wenn $l(X_1,...,X_n)\geq\lambda_c$.\\
+
+Die \reference{Poissonverteilung}{Kapitel}{sec:poissonverteilung} hat außerdem die folgende Wahrscheinlichkeitsfunktion:
+\[
+\mathbb P\left(X=k\right)=\frac{1}{k!}\lambda ^{k}e^{-\lambda }
+\]
+\end{uebsp_theory}
+\begin{eqnarray*}l(\vec k;\lambda)&=&\prod_{i=1}^n\mathbb P_\lambda(k_i)=\prod_{i=1}^n\left(\frac{1}{k!}\lambda ^{k_i}e^{-\lambda }\right)=e^{-n\lambda}\prod_{i=1}^n\frac{1}{k!}\lambda ^{k_i}
+\end{eqnarray*}
+\[L(\vec k;\lambda)=\frac{e^{-n\lambda_0}\prod_{i=1}^n\cancel{\frac{1}{{k!}}}\lambda_0^{k_i}}{e^{-n\lambda_1}\prod_{i=1}^n\cancel{\frac{1}{k!}}\lambda_1^{k_i}}=\frac{e^{-n\lambda_0}\prod_{i=1}^n\lambda_0^{k_i}}{e^{-n\lambda_1}\prod_{i=1}^n\lambda_1^{k_i}}=e^{n(\lambda_1-\lambda_0)}\left(\frac{\lambda_0}{\lambda_1}\right)^{\sum_{i=1}^nk_i}<c\]
+\begin{eqnarray*}l(\vec k;\lambda)&=&\ln\left(e^{n(\lambda_1-\lambda_0)}\left(\frac{\lambda_0}{\lambda_1}\right)^{\sum_{i=1}^nk_i}\right)=\ln e^{n(\lambda_1-\lambda_0)}+\ln \left(\frac{\lambda_0}{\lambda_1}\right)^{\sum_{i=1}^nk_i}\\
+l(\vec k;\lambda)&=&{n(\lambda_1-\lambda_0)}\ln e+{\sum_{i=1}^nk_i}\ln \left(\frac{\lambda_0}{\lambda_1}\right)={n(\lambda_1-\lambda_0)}+{\sum_{i=1}^nk_i}\ln \left(\frac{\lambda_0}{\lambda_1}\right)<\ln c
+\end{eqnarray*}
+\[{\sum_{i=1}^nk_i}<\frac{\ln c+n(\lambda_0-\lambda_1)}{\ln \left(\frac{\lambda_0}{\lambda_1}\right)}\]
+da gilt $\lambda_1>\lambda_0$ folgt:$\frac{\lambda_0}{\lambda_1}<1$
+\end{Answer}
+\end{uebsp}

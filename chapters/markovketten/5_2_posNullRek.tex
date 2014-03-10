@@ -1,0 +1,172 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+%\documentclass[a4paper]{article}
+%\usepackage[ascii]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[english,english]{babel}
+%\usepackage{amsmath}
+%\usepackage{amssymb,amsfonts,textcomp}
+%\usepackage{color}
+%\usepackage{array}
+%\usepackage{hhline}
+%\usepackage{hyperref}
+%\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+%\usepackage[pdftex]{graphicx}
+% Page layout (geometry)
+%\setlength\voffset{-1in}
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%\setlength\textheight{25.7cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{0.0cm}
+%\setlength\headheight{0cm}
+%\setlength\headsep{0cm}
+% Footnote rule
+%\setlength{\skip\footins}{0.119cm}
+%\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+%\makeatletter
+%\newcommand\ps@Standard{
+%  \renewcommand\@oddhead{}
+%  \renewcommand\@evenhead{}
+%  \renewcommand\@oddfoot{}
+%  \renewcommand\@evenfoot{}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\makeatother
+%\pagestyle{Standard}
+%\title{}
+%\author{}
+%\date{2014-02-25T10:01:05.420000000}
+%\begin{document}
+\begin{uebsp}
+{\centering\selectlanguage{english}\bfseries
+Altes Beispiel 5.2
+\par}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Nun wollen wir noch feststellen ob die Markovkette aus 5.1 positiv- oder
+nullrekurrent ist.}
+\index{Nullrekurrent!Beispiel}
+\index{positiv Rekurrent!Beispiel}\\
+
+\begin{center}\textbf{Lösung zu Übung 5.2}\end{center}
+
+{\selectlanguage{english}
+Wir wissen:}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Wenn eine station\"are Verteilung f\"ur die Markovkette existiert, dann
+ist die Markovkette positiv rekurrent, ansonsten nullrekurrent.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Also versuchen wir eine station\"are Verteilung zu berechnen, d.h.: wir
+berechnen:}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+ $\pi _{j}=\sum _{i}\pi _{i}p_{\mathit{ij}}$ was gelichbedeutend ist
+mit:  $\underline{{\pi }}\cdot P=\underline{{\pi }}$ (vgl.
+Matrizenmultiplikation)}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+wobei  $\pi _{j}\text{ (bzw. }\pi _{i}\text{)}$ die Eintr\"age des
+Wahrscheinlichkeitsvektors  $\underline{{\pi }}$ sind, welcher als
+Zeilenvektor aufgefasst wird und .  $\pi _{j}$ Beschreibt also die
+Wahrscheinlichkeit daf\"ur, dass sich die Kette in in Zustand j
+aufh\"alt. Im Falle einer station\"aren Verteilung ist diese ja auch
+vom Zeitpunkt unabh\"angig.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Wir schauen wiedermal als erstes auf unsere  $p_{\mathit{ij}}$ denn von
+denen wissen wir, dass sie oft 0 sind.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+So bleibt uns  $\pi _{j}=\pi _{i-2}\cdot p+\pi _{i+1}(1-p)$ f\"ur p
+eingesetzt ergibt das:}
+
+
+%\bigskip
+
+\begin{equation*}
+\pi _{j}=\frac{1}{3}\pi _{i-2}\cdot +{\frac{2}{3}}\cdot \pi _{i+1}
+\end{equation*}
+\begin{equation*}
+2\pi _{i+1}-3\pi _{i}+\pi _{i-2}=0
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+So erhalten wir mit  $2z^{3}-3z^{2}+1=0$:  $z_{1}=1\text{ durch
+probieren}$ und dann f\"ur  $2z^{2}-z-1=0$ :  $z_{2}=1\text{ und
+}z_{3}=-{\frac{1}{2}}$ }
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Das wiederum f\"uhrt uns zur L\"osung:}
+
+\begin{equation*}
+\pi _{i}=(C_{1}+C_{2}i)z_{1,2}^{i}+C_{3}z_{3}^{i}
+\end{equation*}
+\begin{equation*}
+\pi _{i}=C_{1}+iC_{2}+(-{\frac{1}{2}})^{i}C_{3}
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Unsere Zustandsmenge ist prinzipiell \"uber  $\mathbb{Z}$
+identifizierbar. Das bedeutet aber auch, dass es Zust\"ande mit einer
+''ID'' i gibt die gegen unendlich geht.
+Bilden wir also f\"ur i den Grenzwert gegen  $\pm \infty $ wo es
+schlie{\ss}lich auch Zust\"ande gibt, so stellen wir fest:}
+
+
+%\bigskip
+
+\begin{equation*}
+\pi _{i}=C_{1}+\underbrace{iC_{2}}_{\rightarrow \pm \infty
+}+\underbrace{(-{\frac{1}{2}})^{i}C_{3}}_{\rightarrow 0}
+\end{equation*}
+{\selectlanguage{english}
+Da aber f\"ur die station\"are Verteilung aber gelten muss:  $\sum
+_{i}\pi _{i}=1$ ,ergibt sich ein Widerspruch, d.h.: es existiert keine
+station\"are Verteilung. Somit ist die Markovkette nullrekurrent.}
+
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+%\end{document}
+\end{uebsp}

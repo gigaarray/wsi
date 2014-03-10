@@ -1,0 +1,54 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.5]
+$X$ sei gleichverteilt auf $[0, 1]$. Bestimmen Sie die Verteilung von $-\log X$.
+\end{Exercise}
+\begin{Answer}
+    \index{Gleichverteilung!Beispiel}
+
+Laut Skriptum:\\
+Wenn die gemeinsame Verteilung diskret bzw.\ stetig ist, kann man
+in dieser Definition die Verteilungsfunktion durch die Wahrscheinlichkeits-
+bzw.\ Dichtefunktion ersetzen. 
+
+\begin{uebsp_theory}
+    \textbf{Transformationssatz für Dichten}\index{Transformationssatz für Dichten!Beispiel}\\
+$X=(X_1,\dots,X_n)$ sei stetig verteilt mit der Dichte $f_X$.
+$g:\mathbb R^n\to\mathbb R^n$ sei stetig differenzierbar und 
+eindeutig umkehrbar. $Y=g(X)$ (d.h.\ $Y_i=g_i(X_1,\dots, X_n)$)
+ist dann ebenfalls stetig verteilt mit der Dichte
+\[f_Y(y)=\begin{cases}f_X(g^{-1}(y))|{\partial g^{-1}\over\partial y}(y)|=f_X(g^{-1}(y)){1\over |{\partial g\over\partial x}(g^{-1}(y))|} &\mbox{wenn } y \in g(\mathbb{R}^n), \\
+0 & \mbox{sonst.}\end{cases}\]
+Dabei ist
+\[{\partial g\over\partial x}=\det( ({\partial g_i\over\partial x_j})_{n\times
+n})\]
+die Funktionaldeterminate.
+\end{uebsp_theory}
+
+$Y = g(x) = -log(x)  = -ln(x)\\$
+$-Y = ln(x)\\$
+$x=e^{-y}=g^{-1}(y)\\$
+
+$F_{Y}(y)=\mathbb{P}(Y \le y)=\mathbb{P}(-ln(x) \le y)=\mathbb{P}(x \ge e^{-y})=e^{-y} \textbf{???}\\\\$
+
+$f_Y(y)=f_X(g^{-1}(y)) \cdot \vert((g^{-1})')\vert=f_X(g^{-1}(y)) \cdot \vert((e^{-y})')\vert=f_X(g^{-1}(y)) \cdot \vert-e^{-y}\vert=\\$
+$f_Y(y)=f_X(g^{-1}(y)) \cdot e^{-y}$
+
+
+\[ f_X(x) = \left\{
+  \begin{array}{l l}
+    1 & \quad \text{$x \in [0,1]$}\\
+    0 & \quad \text{sonst} \\
+\end{array} \right.\]
+
+Mit $f_X(x)$ eingesetzt in $f_Y(y)$ folgt: \\
+
+\[ f_Y(y) = \left\{
+  \begin{array}{l l}
+    e^{-y} & \quad \text{$0 \le g^{-1}(y) \le 1$}\\
+    0 & \quad \text{sonst} \\
+\end{array} \right.\]
+
+Wobei das aber keine richtige Einschränkung ist, denn $g^{-1}(y)=e^{-y}$ ist sowieso immer kleiner als 1 für $x \in [0,1]$
+
+\end{Answer}
+\end{uebsp}

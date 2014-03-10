@@ -1,0 +1,77 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:3.2]
+$X$ und $Y$ seien unabhängig gammaverteilt mit Parametern $(\alpha, \lambda)$ und
+$(\beta, \lambda)$. Zeigen Sie, dass $Q = X/(X + Y)$ betaverteilt ist (für Wagemutige:
+bestimmen Sie die gemeinsame Dichte von $S$ und $Q$ und zeigen Sie, dass sie unabhängig sind).
+\end{Exercise}
+\begin{Answer}
+\begin{uebsp_theory}
+Mit der \reference{Gammaverteilung}{Kapitel}{sec:gammaverteilung} $\Gamma(\alpha, \lambda)$:\index{Gammaverteilung!Beispiel}
+    \[f(x) = \begin{cases} 
+                \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda\; x} &\mbox{wenn } x \geq 1 \\
+                0 & \mbox{sonst}
+                \end{cases}\]
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    und dem \reference{Transformationssatz für Dichten}{Kapitel}{sec:transformationssatz_dichten}\index{Transformationssatz für Dichten!Beispiel}
+    \[f_Y(y)=\begin{cases}f_X(g^{-1}(y))|{\partial g^{-1}\over\partial y}(y)| &\mbox{wenn } y \in g(\mathbb{R}^n), \\
+    0 & \mbox{sonst.}\end{cases}\]
+    folgt:
+\end{uebsp_theory}
+
+Mit $g(x,y)=\left( \begin{array}{c} \frac{x}{x+y} \\ x \end{array} \right)$ (wobei hier $oben=Q$ und $unten=x$ gilt), der Umkehrfunktion $g^{-1}(Q,x)=\left( \begin{array}{c} x \\ \frac{x}{Q}-x \end{array} \right)$ ($oben=x$, $unten=y$) und den \reference{Determinantenrechenregeln}{Anhang}{sec:determinante_2_2} folgt:
+
+%TODO: eventuell stimmt hier im ganzen beispiel x und y nicht ganz .....
+\begin{align*}\left|\frac{\partial g^{-1}}{\partial y}(y)\right|&=\left|det\left|\begin{array}{cc}\frac{\partial g_1^{-1}}{\partial x} & \frac{\partial g_1^{-1}}{\partial Q} \\ \frac{\partial g_2^{-1}}{\partial x} & \frac{\partial g_2^{-1}}{\partial Q} \end{array}\right|\right| = \left|det\left|\begin{array}{cc}\frac{\partial x}{\partial x} & \frac{\partial x}{\partial Q} \\ \frac{\partial \frac{x}{Q}-x}{\partial x} & \frac{\partial \frac{x}{Q}-x}{\partial Q} \end{array}\right|\right| = \left|det\left|\begin{array}{cc}1 & 0 \\ \frac{1}{Q}-1 & -\frac{x}{Q^2} \end{array}\right|\right|=\\
+&=\left|-\frac{x}{Q^2}\right|=\frac{x}{Q^2}
+\end{align*}
+
+\begin{eqnarray*}
+f_a &=& \int_{-\infty}^\infty f_{\Gamma_{\alpha, \lambda}}\cdot f_{\Gamma_{\beta, \lambda}}\cdot \left|\frac{\partial g^{-1}}{\partial y}(y)\right| dx\\
+ &=& \int_{-\infty}^\infty \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda\; x} \cdot \frac{\lambda^\beta y^{\beta-1}}{\Gamma(\beta)}e^{-\lambda\; y}\cdot \frac{x}{Q^2} dx \;\;\fbox{wobei hier gilt: $y\;=\;y(x)$}\\
+ &=& \int_{-\infty}^\infty \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda\; x} \cdot \frac{\lambda^\beta \left(\frac{x}{Q}-x\right)^{\beta-1}}{\Gamma(\beta)}e^{-\lambda(\; \frac{x}{Q}-x)}\cdot \frac{x}{Q^2} dx \;\;\fbox{ mit $y=\dfrac{x}{Q}-x$.}\\
+ &=& \frac{\lambda^\alpha\cdot \lambda^\beta}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty x^{\alpha-1}\cancel{e^{-\lambda\; x}} \cdot \left(\frac{x}{Q}-x\right)^{\beta-1}e^{-\frac{\lambda\;x}{Q}}\cancel{e^{\lambda\;x}}\cdot \frac{x}{Q^2} dx\\
+ &=& \frac{\lambda^\alpha\cdot \lambda^\beta}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty x^{\alpha-1} \cdot \left(x\left(\frac{1}{Q}-1\right)\right)^{\beta-1}e^{-\frac{\lambda\;x}{Q}}\cdot \frac{x}{Q^2} dx\\
+ &=& \frac{\lambda^\alpha\cdot \lambda^\beta}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty x^{\alpha-1} \cdot x^{\beta-1}\cdot \left(\frac{1}{Q}-1\right)^{\beta-1}e^{-\frac{\lambda\;x}{Q}}\cdot \frac{x}{Q^2} dx\\
+\end{eqnarray*}
+Anschließend wird $u=\dfrac{x}{Q}\cdot \lambda\Rightarrow x=\dfrac{Q}{\lambda}\cdot u$ Substituiert. (Außerdem: $\dfrac{du}{dx}=\dfrac{\lambda}{Q}\Rightarrow dx=\dfrac{Q}{\lambda}\cdot du$)
+
+\begin{uebsp_theory}
+Die Gammafunktion ist definiert als:
+%TODO: copy this definition to scriptum
+%TODO: don't forget to index as example
+\[\Gamma(x)=\int_0^\infty x^{t-1}e^{-x}dx=(z-1)\Gamma(z-1)\]
+\end{uebsp_theory}
+
+\begin{eqnarray*}
+f_a &=& \frac{\lambda^\alpha\cdot \lambda^\beta}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty \left(\frac{Q}{\lambda}\right)^{\alpha-1}u^{\alpha-1} \cdot \left(\frac{Q}{\lambda}\right)^{\beta-1}u^{\beta-1}\cdot \left(\frac{1}{Q}-1\right)^{\beta-1}e^{-u}\cdot \frac{\cancel{Q}\;u}{\lambda\;\cancel{Q}^{\cancel{2}}} \dfrac{\cancel{Q}}{\lambda} \cdot du\\
+ &=& \frac{\lambda^{\alpha+\beta}}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty Q^{\alpha-1}\cdot u^{\alpha-1} \cdot Q^{\beta-1}\cdot u^{\beta-1}\cdot \left(\frac{1}{Q}-1\right)^{\beta-1}e^{-u}\cdot u\cdot \lambda^{-2}\cdot \lambda^{-\beta+1}\cdot \lambda^{-\alpha+1} \cdot du\\
+ &=& \frac{\lambda^{\cancel{\alpha}+\cancel{\beta}-\cancel{\alpha}+1-\cancel{\beta}+1-2}}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty Q^{\alpha-1}\cdot u^{\alpha-1} \cdot u^{\beta-1}\cdot  Q^{\beta-1}\cdot \left(\frac{1}{Q}-1\right)^{\beta-1}e^{-u}\cdot u \cdot du\\
+ &=& \frac{\lambda^{1+1-2}}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty Q^{\alpha-1}\cdot u^{\alpha+\beta-2}\cdot u\cdot \left(\frac{Q}{Q}-Q\right)^{\beta-1}e^{-u}\cdot du\\
+ &=& \frac{1}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty Q^{\alpha-1}\cdot u^{\alpha+\beta-1}\cdot \left(1-Q\right)^{\beta-1}e^{-u} \cdot du\\
+ &=& \frac{Q^{\alpha-1}\cdot \left(1-Q\right)^{\beta-1}}{\Gamma(\alpha)\cdot \Gamma(\beta)}\int_{-\infty}^\infty u^{\alpha+\beta-1}\cdot e^{-u} \cdot du\;\;\fbox{ einsetzen der Gammafunktion}\\
+f_a &=& \frac{Q^{\alpha-1}\cdot \left(1-Q\right)^{\beta-1}}{\Gamma(\alpha)\cdot \Gamma(\beta)}\cdot \Gamma(\alpha+\beta)
+\end{eqnarray*}
+
+\begin{uebsp_theory}
+Die Betafunktion ist definiert als:
+%TODO: copy this definition to scriptum
+%TODO: don't forget to index as example
+\[\beta(x,y)=\int_0^1t^{x-1}(1-t)^{y-1}dt=\frac{\Gamma(x)\cdot\Gamma(y)}{\Gamma(x+y)}\]
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+Die \reference{Betaverteilung 1. Art}{Kapitel}{sec:betaverteilung_first} $\beta(\alpha, \lambda)$: \index{Betaverteilung!Beispiel}
+    \[f(x) = \begin{cases} 
+                \frac{(1-x)^{\beta-1} x^{\alpha-1}}{\beta(\alpha, \beta)} &\mbox{wenn } 0\leq x \leq 1 \\
+                0 & \mbox{sonst}
+                \end{cases}\]
+\end{uebsp_theory}
+
+\begin{eqnarray*}
+f_a &=& \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\cdot \Gamma(\beta)}\cdot Q^{\alpha-1}\cdot \left(1-Q\right)^{\beta-1}=\frac{1}{\beta(\alpha, \beta)}\cdot Q^{\alpha-1}\cdot \left(1-Q\right)^{\beta-1}\\
+f_a &=& \frac{Q^{\alpha-1}\cdot \left(1-Q\right)^{\beta-1}}{\beta(\alpha, \beta)}\;\;\fbox{ q.e.d. (denn so ist die Beta-Verteilung definiert)}
+\end{eqnarray*}
+\end{Answer}
+\end{uebsp}

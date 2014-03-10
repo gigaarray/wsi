@@ -1,0 +1,355 @@
+\begin{uebsp}
+{\centering\selectlanguage{english}\bfseries
+Beispiel 4.3
+\par}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Das Beispiel 4.1 k\"onnen wir heranziehen um einmal praktisch die
+Berechnung der Absorptionswahrscheinlichkeit durchzuf\"uhren. Spieler A
+gewinnt, wenn er \{a+b\} Einheiten bestitzt. Das Spiel ist dann zu
+Ende, d.h.: der Zustand \{a+b\} ist ein absorbierender Zustand.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+ $a_{i_{0}}=1$  d.h.:  $a_{a+b}=1$ }
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i}=\sum _{j}p_{\mathit{ij}}a_{j}
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Von dieser Summe bleibt nicht sehr viel \"ubrig, denn die einzigen
+Zust\"ande j die von \  $i$ aus erreichbar sind (und f\"ur die damit 
+$p_{\mathit{ij}}\neq 0$ ist) sind die Nachbarzust\"ande, welche jeweils
+mit Wahrscheinlichkeit  $\frac{1}{2}$ erreicht werden. \ Wir erhalten
+also:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i}=p_{i,i-1}a_{i-1}+p_{i,i+1}a_{i+1}=\frac{1}{2}a_{i-1}+\frac{1}{2}a_{i+1}
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Es gibt hier 2 L\"osungsans\"atze: im Allgemeinen wird man hier wohl
+nicht drum-herum kommen, \ eine Differenzengleichnung nach allen Regeln
+der Kunst zu l\"osen, deshalb wird hier sp\"ater auch gezeigt wie das
+funktioniert. Man kann sich in diesem speziellen Fall, die Aufgabe
+etwas erleichtert in dem man die Gleichung auf folgende Weise umformt:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i+1}-a_{i}=a_{i}-a_{i-1}=c\text{ ( konstant )}
+\end{equation*}
+{\selectlanguage{english}
+So kann man erkennen, dass die Differenz zwischen zwei benachbarten a
+immer konstant ist. D.h.: aber auch, dass gilt:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i}=a_{0}+i\cdot c=i\cdot c
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Die Konstante c k\"onnen wir noch auf folgende Weise berechnen:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{a+b}=1=(a+b)\cdot c\text{   }\rightarrow \text{   }c=\frac{1}{(a+b)}
+\end{equation*}
+{\selectlanguage{english}
+Und wir erhalten:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{a}=\frac{a}{(a+b)}
+\end{equation*}
+{\selectlanguage{english}
+Nun sei noch gezeigt, wie man durch l\"osen der Differenzengleichung auf
+die L\"osung gekommen w\"are. Wir bringen unsere Gleichung zuerst auf
+die Form:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i+1}-2a_{i}-a_{i-1}=0
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Dies ist eine lineare Differenzengleichung zweiter Ordnung mit
+konstanten Koeffizienten. Eine solche ist im Allgemeinen von folgender
+Form:}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+ $x_{n+2}+\mathit{ax}_{n+1}+\mathit{bx}_{n}=s_{n}$  mit  $n\geqslant 0$
+}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Wobei a und b konstante Koeffizienten (mit  $b\neq 0$) sind und der
+St\"orfunktion  $s_{n}$ m\"oglicherweise von n abh\"angt. Ist 
+$s_{n}=0$ f\"ur alle n, so spricht von man von einer homogenen,
+andernfalls von einer inhomogenen Gleichung.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Wir rufen uns in Erinnerung wie man so etwas l\"ost:}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+1. Bestimmen der allgemeinen L\"osung der homogenen Gleichung 
+$x_{n}^{(h)}$ }
+
+{\selectlanguage{english}
+2. Bestimmen einer partikul\"aren L\"osung  $x_{n}^{(p)}$ }
+
+{\selectlanguage{english}
+3. Ermitteln der L\"osungsgesamtheit gem\"a{\ss} 
+$x_{n}=x_{n}^{(h)}+x_{n}^{(p)}$ }
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Nun denn, beginnen wir mit der L\"osung der homogenen Gleichung:}
+
+
+%\bigskip
+
+\begin{equation*}
+x_{n+2}+\mathit{ax}_{n+1}+\mathit{bx}_{n}=0
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Man w\"ahlt den Ansatz  $x_{n}^{(h)}=\lambda ^{n}$  und erh\"alt:}
+
+
+%\bigskip
+
+\begin{equation*}
+\lambda ^{n+2}+a\lambda ^{n+1}+b\lambda ^{n}=0
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+hier kann man noch durch  $\lambda ^{n}$ k\"urzen und bekommt:}
+
+
+%\bigskip
+
+\begin{equation*}
+\lambda ^{2}+a\lambda +b=0
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Diese Quadratische Gleichnung wird auch ''Charkteristische
+Gleichung'' genannt. Wichtig zu wissen ist, wie die
+L\"osungen  $\lambda _{1}$ und \  $\lambda _{2}$ zu interpretieren sind
+bzw. was sie f\"ur unser  $x_{n}^{(h)}$ bedeuten: }
+
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+
+\begin{equation*}
+x_{n}^{(h)}=\left\{\begin{matrix}C_{1}\lambda _{1}^{n}+C_{2}\lambda
+_{2}^{n}\text{  falls }\lambda _{1}\neq \lambda _{2}\hfill\null
+\\r^{n}(C_{1}\cos (n\phi )+C_{2}\cos (n\phi ))\text{   falls }\lambda
+_{1,2}=r(\cos (\phi )\pm i\sin (\phi ))\text{ konjugiert
+komplex}\hfill\null \\(C_{1}+\mathit{nC}_{2})\lambda _{1}^{n}\text{  
+falls}\lambda _{1}=\lambda _{2}\text{reell}\hfill\null
+\end{matrix}\right.
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+mit  $C_{1,}C_{2}\in \mathbb{R}$ }
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Im Schritt 2 ist dann im Allgemeinen noch eine partikul\"are L\"osung zu
+finden, indem man unter zu Hilfenahme der folgenden Tabelle ein Ansatz
+f\"ur  $x_{n}^{(p)}$ macht und entsprechend umformt.}
+
+
+%\bigskip
+
+
+
+\begin{center}
+\includegraphics[width=17cm,height=4.62cm]{chapters/markovketten/a43Absorptionswahrscheinlichkeit-img1.pdf}
+\end{center}
+{\selectlanguage{english}
+In diesem Beispiel ist der ganze Bl\"odsinn nicht notwendig, da wir,
+wenn wir geschickt umstellen auch anders auf unsere L\"osung kommen.
+Der Vollst\"andigkeit halber wollen wir das nun aber durch exerzieren
+-- es ist ja auch nicht so viel arbeit, da sowieso nur einen homogene
+Differenzengleichung vorliegt.}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{i+1}-2a_{i}-a_{i-1}=0
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+\begin{equation*}
+\lambda ^{2}-2\lambda -1=0
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Zur Erinnerung: die quadratische L\"osungsformel f\"ur 
+$\mathit{ax}^{2}+\mathit{bx}+c=0$ lautet:}
+
+
+%\bigskip
+
+\begin{equation*}
+x_{1,2}=\frac{-b\pm \sqrt{b^{2}-4\mathit{ac}}}{2a}
+\end{equation*}
+{\selectlanguage{english}
+und f\"ur  $x^{2}+\mathit{px}+q=0$:}
+
+
+%\bigskip
+
+\begin{equation*}
+x_{1,2}=-{\frac{p}{2}}\pm \sqrt{(\frac{p}{2})^{2}-q}
+\end{equation*}
+\begin{equation*}
+\lambda _{1,2}=\frac{2}{2}\pm \sqrt{(\frac{2}{2})^{2}-1}=1\pm 0=1
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Damit ist unsere L\"osung }
+
+\begin{equation*}
+x_{n}^{(h)}=a_{n}=(C_{1}+\mathit{nC}_{2})\lambda
+_{1}^{n}=(C_{1}+\mathit{nC}_{2})(1)^{n}=(C_{1}+\mathit{nC}_{2})
+\end{equation*}
+{\selectlanguage{english}
+Wir wissen, dass \  $a_{a+b}=1$ und ebenso wissen wir, dass  $a_{0}=0$
+(dies ist der Fall wenn B und A kein Kapital mehr hat -- auch dann ist
+das Spiel zu Ende, die Wahrscheinlichkeit zu gewinnen ist dann aber 0,
+da A ja bereits verloren hat!) Daraus k\"onnen wir uns unsere 
+$C_{1,}C_{2}\in \mathbb{R}$ berechnen.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+ $a_{0}=0=(C_{1}+0C_{2})=(C_{1}+0)=0$ Daher:  $C_{1}=0$ }
+
+
+%\bigskip
+
+\begin{equation*}
+a_{a+b}=(C_{1}+(a+b)C_{2})=(0+(a+b)C_{2})=1
+\end{equation*}
+{\selectlanguage{english}
+Letzendlich erhalten wir so:}
+
+\begin{equation*}
+C_{2}=\frac{1}{a+b}
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Somit lautet die Formel f\"ur unsere Absorptionswahrscheinlichkeiten:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{n}=n\frac{1}{a+b}
+\end{equation*}
+{\selectlanguage{english}
+Laut Angabe beginnen wir bei dem Zustand a -- d.h. Spieler A hat zu
+Beginn Kaptial a.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Die Absorptionswahrscheinlichkeit  $a_{a}$ ist also:}
+
+
+%\bigskip
+
+\begin{equation*}
+a_{a}=\frac{a}{a+b}
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+%\end{document}
+\end{uebsp}

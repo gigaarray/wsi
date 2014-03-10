@@ -16,6 +16,11 @@
 		- [untereintrag erstellen](#untereintrag-erstellen)
 		- [2-deutigkeiten](#2-deutigkeiten)
 	- [symbolverzeichnis](#symbolverzeichnis)
+	- [übungsbeispiele erstellen](#übungsbeispiele-erstellen)
+		- [übungsbeispiele erstellen:](#übungsbeispiele-erstellen)
+		- [übungsbeispiele in das übungsdokument einfügen:](#übungsbeispiele-in-das-übungsdokument-einfügen)
+		- [übungsbeispiele in das skriptum einfügen:](#übungsbeispiele-in-das-skriptum-einfügen)
+		- [übungsbeispiele richtig verlinken](#übungsbeispiele-richtig-verlinken)
 	- [git howto:](#git-howto)
 		- [erstellen eines GitHub-accounts](#erstellen-eines-github-accounts)
 		- [dateien unter versionskontrolle stellen:](#dateien-unter-versionskontrolle-stellen)
@@ -40,14 +45,16 @@ als erstes sollte man git und latex installieren:
 
 ### clone repository ###
     
-    git clone https://github.com/byteunit/wsi.git
+    git clone https://github.com/gigaarray/wsi_bsp.git
 
 ### dokumente aus den sourcen bauen ###
+grundsätzlich gibt es 4 dokumente, die wären das skriptum(einmal mit und einmal ohne übungsbeispiele), ein dokument, in dem nur übungsbeispiele vorkommen und die Prüfung vom 10.03.14
+
 am besten baut man gleich am anfgang alles mit 
 
     make clean all
 
-dabei wird dann gleich das skriptum erzeugt.
+dabei wird neben dem skriptum samt dem durchsuchbaren index auch noch alles andere erzeugt.
 
 man kann aber auch, wie von latex gewohnt mit pdflatex und makeindex arbeiten. also z.b.: 
 
@@ -118,7 +125,7 @@ wenn es beispielsweise ein beispiel aus der übung zu einem satz, oder einer def
     %                                   eigenschaften...seite
 
 ### 2-deutigkeiten ###
-sollte es 2-deutige namen geben z.B. "Axiome von Kolmogorov" und "Kolmogorov-Axiome" sollte man sich auf einen namen festlegen und die 2. bedeutung auf die 1. zeigen lassen:
+sollte es 2-deutige namen geben z.B. "Axiome von Kolmogorov" und "Kolmogorov-Axiome" sollte man sich auf einen namen festlegen und die 2. bedeutung auf die 1. zeigen lassen: (hat den vorteil, dass man beispielsweise die übungsbeispiele nicht auf beide bedeutungen zeigen lassen muss)
  
     \index{Axiome von Kolmogorov|see{Kolmogorov-Axiome}} %doppeleinträge
     %im index steht anschließend: Axiome von Kolmogorov siehe Kolmogorov-Axiome
@@ -135,8 +142,85 @@ einfach einen entsprechenden symboleintrag in der symbols.tex erstellen:
         sort=symbolNAME, type=symbolslist
     }
 
-abschließend noch bei der erklärung des symbols einfach bei der erklärung eines neuen symbols statt $\NAME$ einfach \gls{symb:NAME} verwenden. dann erscheint das symbol beim nächsten mal, wenn das pdf erstellt wird im symbolverzeichnis.
+abschließend noch bei der erklärung des symbols einfach bei der Erklärung eines neuen Symbols statt $\NAME$ einfach \gls{symb:NAME} verwenden. dann erscheint das symbol beim nächsten mal, wenn das pdf erstellt wird im symbolverzeichnis.
 
+
+übungsbeispiele erstellen
+-------------------------
+
+### übungsbeispiele erstellen: ###
+am besten jedes beispiel in ein dokument z.B:
+
+    \begin{uebsp}
+    \begin{Exercise}
+        irgendeine extrem schwere angabe
+    \end{Exercise}
+    \begin{Answer}
+     \begin{uebsp_theory}
+    \end{uebsp_theory}
+
+        \begin{uebsp_theory}
+            irgendeine definition, oder einen satz den man braucht, kurz erwähnt, evtl. mit referenz zu der theorie im skriptum
+        \end{uebsp_theory}
+
+        \begin{uebsp_theory}
+            noch irgendeine definition, oder einen satz den man braucht, kurz erwähnt, evtl. mit referenz zu der theorie im skriptum
+        \end{uebsp_theory}
+
+        irgendeine extrem schlaue rechnung
+    \end{Answer}
+    \end{uebsp}
+
+in den übungsbeispielen sollten immer nur kurze theoretische hintergründe stehen, dafür gibts den typ uebsp_theory:
+
+### übungsbeispiele in das übungsdokument einfügen: ###
+die einzelnen übungsbeispiele befinden sich im ordner examples.
+
+zum einfügen eines übungsbeispiels in das übungsbeispiel-dokument muss folgende zeile in uebl.tex eingefügt werden (wobei X und Y entsprechend mit dem übungsblatt und der nummer auf dem übungsblatt ersetzt werden müssen):
+
+    \input{examples/roundX/bspY.tex}
+
+sollte man gerade das erste übungsbeispiel eines übungsblattes (2. übung, 3. übung, usw.)  einfügen wollen, so muss man vor dem input noch die folgende zeile einfügen:
+
+    \newExercPage
+
+am besten man orientiert sich an den bereits gemachten übungsbeispielen.
+
+
+### übungsbeispiele in das skriptum einfügen: ###
+die einzelnen übungsbeispiele befinden sich im ordner examples.
+
+zum einfügen eines übungsbeispiels in das skriptum muss folgende zeile in wsi.tex eingefügt werden (wobei X und Y entsprechend mit dem übungsblatt und der nummer auf dem übungsblatt ersetzt werden müssen):
+
+    \input{examples/roundX/bspY.tex}
+
+ich denke, dass die richtige stelle für das übungsbeispiel das scriptum am ende der section, die das thema des übungsbeispiels behandelt, wäre.
+
+ebenso wie im übungsbeispieldokument gilt auch im skriptum, dass makiert werden muss, wo das neue übungsblatt beginnt: 
+
+    \newExercPage
+
+
+### übungsbeispiele richtig verlinken ###
+um beispielsweise einen satz oder eine definition aus dem skriptum zu verwenden, muss dieser im skriptum als label deklariert werden (siehe z.b. bedingte Wahrscheinlichkeit) außerdem sollte er, wenn man an so einem satz/def. vorbeikommt diesen in den index des skriptums geben:
+
+    \label{def:bedingte_wahrscheinlichkeit}
+    \index{bedingte Wahrscheinlichkeit}
+    \index{Wahrscheinlichkeit, bedingte|see{bedingte Wahrscheinlichkeit}}
+
+im obigen beispiel sieht man beispielsweise die vorgangsweise bei titeln mit mehreren worten: hier sollte man 2 index-einträge erstellen: den einen mit 'bedingte Wahrscheinlichkeit' und den anderen mit 'Wahrscheinlichkeit, bedingte', jedoch verweisend auf den ersten eintrag.
+
+nun kann man mit dem label 'def:bedingte_wahrscheinlichkeit' in dem übungsbeispiel referenzieren:
+
+    Mit der \reference{Bedingten Wahrscheinlichkeit}{Definition}{def:bedingte_wahrscheinlichkeit} ...
+
+wobei der erste parameter von \reference der angezeigte name ist, der 2. parameter gibt an, ob es sich um einen Satz oder eine Definition handelt und der 3. parameter gibt das label an.
+
+abschließend sollte man nicht vergessen, das übungsbeispiel auch in den index zu geben:
+
+    \index{bedingte Wahrscheinlichkeit!Beispiel}
+
+dieser index-eintrag gibt an, dass als unterpunkt zu bedingte Wahrscheinlichkeit ein beispiel existiert.
 
 git howto:
 ----------

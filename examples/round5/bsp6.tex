@@ -1,0 +1,198 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+%\documentclass[a4paper]{article}
+%\usepackage[ascii]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[english,ngerman]{babel}
+%%\usepackage{amsmath}
+%\usepackage{amssymb,amsfonts,textcomp}
+%\usepackage{color}
+%\usepackage{array}
+%\usepackage{hhline}
+%\usepackage{hyperref}
+%\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+% Text styles
+%\newcommand\textstyleAbsatzStandardschriftart[1]{#1}
+% Page layout (geometry)
+%\setlength\voffset{-1in}
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%%\setlength\textheight{23.698002cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{0.751cm}
+%\setlength\headheight{1.251cm}
+%\setlength\headsep{0cm}
+% Footnote rule
+%\setlength{\skip\footins}{0.119cm}
+%\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+%\makeatletter
+%\newcommand\ps@MP{
+%  \renewcommand\@oddhead{\"Ubung 5\hfill \hfill 27.11.2013}
+%%  \renewcommand\@evenhead{\@oddhead}
+%  \renewcommand\@oddfoot{Wahrscheinlichkeitsrechnung\hfill Markus Kessler\hfill Seite %\textstyleAbsatzStandardschriftart{\textbf{\thepage{}}} von %\textstyleAbsatzStandardschriftart{\textbf{?}} \textstyleAbsatzStandardschriftart{und %stochastische Prozesse}}
+%%  \renewcommand\@evenfoot{\@oddfoot}
+%%  \renewcommand\thepage{\arabic{page}}
+%}
+%\newcommand\ps@Standard{
+%  \renewcommand\@oddhead{}
+%  \renewcommand\@evenhead{}
+%  \renewcommand\@oddfoot{}
+%  \renewcommand\@evenfoot{}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\makeatother
+%\pagestyle{Standard}
+%\newcommand\normalsubformula[1]{\text{\mathversion{normal}$#1$}}
+%\title{}
+%\author{}
+%\date{2014-02-25T11:16:06.549000000}
+%\begin{document}
+{
+\newcommand\textstyleAbsatzStandardschriftart[1]{#1}
+\newcommand\normalsubformula[1]{\text{\mathversion{normal}$#1$}}
+
+\begin{uebsp}
+\begin{Exercise}
+
+{\selectlanguage{ngerman}\bfseries
+In zwei Urnen befinden sich insgesamt N Kugeln. Es wird jeweils eine
+Kugel zuf\"allig (gleichverteilt) ausgew\"ahlt und in die andere Urne
+gelegt. Die Anzahl 
+$\normalsubformula{\text{X}}_{\normalsubformula{\text{t}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{der Kugeln in Urne 1 nach t
+Schritten bildet eine Markovkette. Bestimmen Sie Ihre \"Ubergangsmatrix
+und die station\"are Verteilung.}}
+\index{"Ubergangsmatrix@Übergangsmatrix!Beispiel}
+\index{stationäre Verteilung!Beispiel}
+
+\end{Exercise}
+\begin{Answer}
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{ngerman}
+F\"ur die \"Ubergangsmatrix werden die Wahrscheinlichkeiten in
+Abh\"angigkeit der Gesamtkugeln definiert.}
+
+\begin{equation*}
+\normalsubformula{\text{P}}=\left(\begin{matrix}\normalsubformula{\text{0}}&\normalsubformula{\text{1}}&\normalsubformula{\text{0}}&\cdots
+&\cdots &\cdots
+&\normalsubformula{\text{0}}\\\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}&\normalsubformula{\text{0}}&\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}&\normalsubformula{\text{0}}&\cdots
+&\cdots
+&\normalsubformula{\text{0}}\\\normalsubformula{\text{0}}&\frac{\normalsubformula{\text{2}}}{\normalsubformula{\text{N}}}&\normalsubformula{\text{0}}&\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{2}}}{\normalsubformula{\text{N}}}&\normalsubformula{\text{0}}&\cdots
+&\normalsubformula{\text{0}}\\\vdots &\ddots &\ddots &\ddots &\ddots
+&\ddots &\vdots \\\normalsubformula{\text{0}}&\ddots &\ddots
+&\normalsubformula{\text{0}}&\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}&\normalsubformula{\text{0}}&\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}\\\normalsubformula{\text{0}}&\cdots
+&\cdots &\cdots
+&\normalsubformula{\text{0}}&\normalsubformula{\text{1}}&\normalsubformula{\text{0}}\end{matrix}\right)
+\end{equation*}
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{Wir bauen
+uns nun rekursiv eine Formel f\"ur }} $\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{auf. Dabei
+gibt i die Anzahl der Kugeln in Urne 1 an.}}
+
+Wir versuchen nun im folgenden, $\pi_i$ als Funktion von $\pi_0$ darzustellen:
+Beginnen wir bei $\pi_0$: diese kann nur von $\pi_1$ erreicht werden:
+\[\pi_0=\frac{1}{N}\pi_1\;\;\Rightarrow\;\;\pi_1=N\cdot \pi_0\]
+
+$\pi_1$ lässt sich nun darstellen als:
+\[\pi_1=1\cdot\pi_0+\frac{2}{N}\cdot\pi_2\;\;\Rightarrow\;\;
+N\cdot\pi_0-\pi_0=\frac{2}{N}\cdot\pi_2\;\;\Rightarrow\;\;
+\pi_2=\frac{N(N-1)}{2}\pi_0\]
+
+$\pi_2$ lässt sich nun darstellen als:
+\[\pi_2=\frac{N-1}{N}\pi_1+\frac{3}{N}\pi_3\;\;\Rightarrow\;\;\frac{N(N-1)}{2}\pi_0=\frac{N-1}{\cancel N}\cancel N\cdot \pi_0+\frac{3}{N}\pi_3\;\;\Rightarrow\;\;\]
+\[\frac{N(N-1)-2\cdot (N-1)}{2}\cdot \pi_0=\frac{3}{N}\pi_3\;\;\Rightarrow\;\;\pi_3=\frac{(N-2)(N-1)N}{2\cdot 3}\cdot \pi_0\]
+
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{F\"ur }}
+$\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{ergibt
+das:}}
+
+\begin{equation*}
+\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}=\frac{\normalsubformula{\text{N}}\left(\normalsubformula{\text{N}}-\normalsubformula{\text{1}}\right)\left(\normalsubformula{\text{N}}-\normalsubformula{\text{2}}\right)\ldots
+\left(\normalsubformula{\text{N}}-\left(\normalsubformula{\text{i}}-\normalsubformula{\text{1}}\right)\right)}{\normalsubformula{\text{i}}!}\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}
+\end{equation*}
+{\selectlanguage{ngerman}
+Die Analogie zum Binomialkoeffizient:}
+
+\begin{equation*}
+\left(\begin{matrix}\normalsubformula{\text{n}}\\\normalsubformula{\text{k}}\end{matrix}\right)=\frac{\normalsubformula{\text{n}}!}{\normalsubformula{\text{k}}!\left(\normalsubformula{\text{n}}-\normalsubformula{\text{k}}\right)!}=\frac{\normalsubformula{\text{n}}\left(\normalsubformula{\text{n}}-\normalsubformula{\text{1}}\right)\left(\normalsubformula{\text{n}}-\normalsubformula{\text{2}}\right)\ldots
+\left(\normalsubformula{\text{n}}-\left(\normalsubformula{\text{k}}-\normalsubformula{\text{1}}\right)\right)}{\normalsubformula{\text{k}}!}
+\end{equation*}
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{Wir
+k\"onnen }} $\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{umschreiben:}}
+
+\begin{equation*}
+\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}=\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{m}}\normalsubformula{\text{i}}\normalsubformula{\text{t}}\normalsubformula{\text{~}}\normalsubformula{\text{i}}\in
+[\normalsubformula{\text{0}},\normalsubformula{\text{N}}]
+\end{equation*}
+Die Summe \"uber alle  $\normalsubformula{\text{$\pi
+$}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{beinhaltet alle Wahrscheinlichkeiten
+und muss 1 geben.}
+
+\begin{equation*}
+\sum
+_{\normalsubformula{\text{i}}=\normalsubformula{\text{0}}}^{\normalsubformula{\text{N}}}\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}=\normalsubformula{\text{1}}=\sum
+_{\normalsubformula{\text{i}}=\normalsubformula{\text{0}}}^{\normalsubformula{\text{N}}}{\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}}=\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\sum
+_{\normalsubformula{\text{i}}=\normalsubformula{\text{0}}}^{\normalsubformula{\text{N}}}\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)
+\end{equation*}
+Diese Summe k\"onnen wir durch den Binomischen Lehrsatz(siehe Anhang \ref{sec:binom_lehrsatz}) umschreiben:\index{Binomischer Lehrsatz!Beispiel}
+
+\begin{equation*}
+\normalsubformula{\text{$\pi $}}_{\normalsubformula{\text{0}}}\sum
+_{\normalsubformula{\text{i}}=\normalsubformula{\text{0}}}^{\normalsubformula{\text{N}}}\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)=\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\sum
+_{\normalsubformula{\text{i}}=\normalsubformula{\text{0}}}^{\normalsubformula{\text{N}}}{\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)\normalsubformula{\text{1}}^{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}\normalsubformula{\text{1}}^{\normalsubformula{\text{i}}}}=\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\left(\normalsubformula{\text{1}}+\normalsubformula{\text{1}}\right)^{\normalsubformula{\text{N}}}=\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{2}}^{\normalsubformula{\text{N}}}
+\end{equation*}
+{\selectlanguage{ngerman}
+Wie bereits erw\"ahnt muss dies 1 ergeben:}
+
+\begin{equation*}
+\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{2}}^{\normalsubformula{\text{N}}}=\normalsubformula{\text{1}}\Rightarrow
+\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{0}}}=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{2}}^{\normalsubformula{\text{N}}}}
+\end{equation*}
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{Eingesetzt
+in }} $\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{erhalten
+wir die station\"are Verteilung:}}
+
+\begin{equation*}
+\normalsubformula{\text{$\pi
+$}}_{\normalsubformula{\text{i}}}=\left(\begin{matrix}\normalsubformula{\text{N}}\\\normalsubformula{\text{i}}\end{matrix}\right)\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{2}}^{\normalsubformula{\text{N}}}}
+\end{equation*}
+%\end{document}
+\end{Answer}
+\end{uebsp}
+}

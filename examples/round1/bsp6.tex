@@ -1,0 +1,25 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:1.6]
+In einer Urne sind 3 weiße und 2 schwarze Kugeln. Es wird eine Kugel gezogen und mit einer zusätzlichen Kugel der selben Farbe zurückgelegt (nach der ersten Ziehung sind also insgesamt 6 Kugeln in der Urne). Bestimmen Sie die Wahrscheinlichkeit, dass die zweite gezogene Kugel weiß ist.
+\end{Exercise}
+\begin{Answer}
+    \begin{uebsp_theory}
+        Mit der \reference{Bedingten Wahrscheinlichkeit}{Definition}{def:bedingte_wahrscheinlichkeit}\index{bedingte Wahrscheinlichkeit!Beispiel}
+        \[\mathbb P(B|A)=\frac{\mathbb P(B)\mathbb P(A|B)}{\mathbb P(A)}\]
+    \end{uebsp_theory}
+    \begin{uebsp_theory}
+        und dem \reference{Additionstheorem}{Satz}{satz:additionstheorem} \index{Additionstheorem!Beispiel}
+        \[\mathbb P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n(-1)^{i-1}S_i\]
+         folgt:
+    \end{uebsp_theory}
+\index{Additionstheorem!Beispiel}
+\begin{enumerate}[1.]
+    \item Schritt: die Wahrscheinlichkeit, dass bei 5 Kugeln beim 1. Schritt eine Weiße gezogen wird:
+        \[\mathbb{P}(A)=\frac{3}{5}\;\Rightarrow\;\mathbb{P}(A^c)=\frac{2}{5}\;\leftarrow\fbox{\parbox[c][2em][c]{0.4\textwidth}{Wahrscheinlichkeit, dass eine schwarze Kugel gezogen wurde.}}\]
+    \item Schritt: die Wahrscheinlichkeit, dass bei 6 Kugeln eine Weiße gezogen wird.
+        \[\mathbb{P}(B|A)=\frac{4}{6}\cdot \frac{3}{5}\;\leftarrow\fbox{\parbox[c][2em][c]{0.4\textwidth}{Ereignisse paarweise unabhängig. \\$\Rightarrow$ Schnittmenge von beiden ist 0.}}\rightarrow\;\mathbb{P}(B|A^c)=\frac{3}{6}\cdot \frac{2}{5}\]
+    \[\mathbb{P}(B)=\mathbb{P}(B|A)+\mathbb{P}(B|A^c)=\frac{2}{3}\cdot\frac{3}{5}+\frac{1}{2}\cdot \frac{2}{5}=\frac{3}{5}\]
+        
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

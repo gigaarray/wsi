@@ -1,0 +1,107 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:10.5]
+Bestimmen Sie für $m = 1, 2, 3, 4$ geschlossene Ausdrücke für die mittlere Unbestimmtheit $H^*(P)$.
+\end{Exercise}
+\begin{Answer}
+\index{Mittlere Unbestimmtheit!Beispiel}
+\textbf{Für m = 1:}\\
+Für einen Binärbaum mit nur einem Blatt ergibt
+\[H^*(P) = l_1 p_1\]
+mit $l_1 = 0$ und $p_1 = 1$ 
+eine mittlere Unbestimmtheit von:
+\[H^*(P) = 0\]
+
+
+\textbf{Für m = 2:}\\
+Ein Binärbaum mit m = 2 hat die Form:
+\begin{center}
+\begin{tikzpicture}[every tree node/.style={draw,circle},
+   level distance=1.3cm,sibling distance=.8cm, anchor=west,
+    minimum size=8mm,
+   edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}]
+	\Tree [.\node (A) {} ; 
+		[.\node (B) {1};]
+		[.\node (C) {2};]
+		]
+\end{tikzpicture}
+\end{center}
+Daraus ergibt sich eine mittlere Unbestimmtheit von:
+\[H^*(P) = l_1 p_1 + l_2 p_2\]
+Da $l_1 = l_2 = 1$ ist und die Summe der Wahrscheinlichkeiten 1 sein muss, folgt:
+\[H^*(P) = p_1 + p_2 = 1\]
+
+
+\textbf{Für m = 3:}\\
+o.B.d.A sei: 
+$p_1 \le p_2 \le p_3$, \\
+daraus bildet sich ein Binärbaum:
+\begin{center}
+\begin{tikzpicture}[every tree node/.style={draw,circle},
+   level distance=1.3cm,sibling distance=.8cm, anchor=west,
+    minimum size=8mm,
+   edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}]
+	\Tree [.\node (A) {} ; 
+		[.\node (B) {1};]
+		[.\node (C) {};
+			[.\node (D) {2};]
+			[.\node (E) {3};]
+		]
+	]
+\end{tikzpicture}
+\end{center}
+Für die mittlere Unbestimmtheit heißt, dass:
+\[H^*(P) = l_1 p_1 + l_2 p_2 + l_3 p_3 = p_1 + 2(p_2 + p_3)\]
+Da $p_1 + p_2 + p_3 = 1$ ist, folgt daraus:
+\[H^*(P) = p_1 + 2(1 - p_1) = 2 - p1\]
+bzw.
+\[H^*(P) = 1 - (p_2 + p_3) + 2(p_2 + p_3) = 1 + p_2 + p_3\]
+
+
+\textbf{Für m = 4:}\\
+o.B.d.A sei: 
+$p_1 \le p_2 \le p_3 \le p_4$, \\
+dabei sind 2 verschiedene Binärbäume möglich:
+\begin{center}
+\begin{tikzpicture}[every tree node/.style={draw,circle},
+   level distance=1.3cm,sibling distance=.8cm, anchor=west,
+    minimum size=8mm,
+   edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}]
+	\Tree [.\node (A) {} ; 
+		[.\node (B) {};
+				[.\node (C) {1};]
+				[.\node (D) {2};]
+		]
+		[.\node (E) {};
+			[.\node (F) {3};]
+			[.\node (G) {4};]
+		]
+	]
+\end{tikzpicture}
+\end{center}
+mit einer mittleren Unbestimmtheit von:
+\[H_1^*(P) = 2(p_1 + p_2 + p_3 + p_4) = 2\]
+Bzw.
+\begin{center}
+\begin{tikzpicture}[every tree node/.style={draw,circle},
+   level distance=1.3cm,sibling distance=.8cm, anchor=west,
+    minimum size=8mm,
+   edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}]
+	\Tree [.\node (A) {} ; 
+		[.\node (B) {1};	]
+		[.\node (C) {};
+			[.\node (D) {2};]
+			[.\node (E) {};
+				[.\node (F) {3};]
+				[.\node (G) {4};]]
+		]
+	]
+\end{tikzpicture}
+\end{center}
+mit einer mittleren Unbestimmtheit von:
+\[H_2^*(P) = p_1 + 2 p_2 + 3 (p_3 + p_4) = p_1 + 2 p_2 + 3(1- (p_1 + p_2))\]
+\[= p_1 + 2 p_2 + 3 - 3 p_1 - 3 p_2 = 3 - 2 p_1 - p_2\]
+
+Da je nach Verteilung der Binärbaum mit der kleineren mittleren Unbestimmtheit verwendet wird, ergibt das insgesamt:
+\[H^*(P) = \min(2, 3 - 2 p_1 - p_2)\]
+\end{Answer}
+\end{uebsp}

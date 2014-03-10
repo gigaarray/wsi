@@ -1,0 +1,51 @@
+{
+    \begin{axis}[domain=0:8,
+            axis x line=bottom, % no box around the plot, only x and y axis
+            axis y line=left, % the * would suppress the arrow tips
+            xlabel=Augenzahl,
+            %ylabel=Wahrscheinlichkeit,
+            legend pos=north west,
+            samples=50,
+            height=6cm,
+            width=10cm,
+            clip=false]
+            \addplot[blue] coordinates{(-1,0)(1,0)};
+            \addlegendentry[align=left]{Randverteilung $x$};
+            \addplot[blue,forget plot] coordinates{(1, 91)(2, 91)};
+            \addplot[blue,forget plot] coordinates{(2,152)(3,152)};
+            \addplot[blue,forget plot] coordinates{(3,189)(4,189)};
+            \addplot[blue,forget plot] coordinates{(4,208)(5,208)};
+            \addplot[blue,forget plot] coordinates{(5,215)(6,215)};
+            \addplot[blue,forget plot] coordinates{(6,216)(8,216)};
+
+            \draw[dotted] (axis cs:1,  0) -- (axis cs:1,  91);
+            \draw[dotted] (axis cs:2, 91) -- (axis cs:2,152);
+            \draw[dotted] (axis cs:3,152) -- (axis cs:3,189);
+            \draw[dotted] (axis cs:4,189) -- (axis cs:4,208);
+            \draw[dotted] (axis cs:5,208) -- (axis cs:5,215);
+            \draw[dotted] (axis cs:6,215) -- (axis cs:6,216);
+            \addplot[discontinuityblue,forget plot] coordinates{(1,0)(2,91)(3,152)(4,189)(5,208)(6,215)};
+            \addplot[continuityblue,forget plot] coordinates{(1,91)(2,152)(3,189)(4,208)(5,215)(6,216)};
+
+
+            \addplot[red] coordinates{(-1,0)(1,0)};
+            \addlegendentry[align=left]{Randwahrscheinlichkeit $x$};%TODO: add better label
+            \addplot[red,forget plot] coordinates{(1,91)(2,91)};
+            \addplot[red,forget plot] coordinates{(2,61)(3,61)};
+            \addplot[red,forget plot] coordinates{(3,37)(4,37)};
+            \addplot[red,forget plot] coordinates{(4,19)(5,19)};
+            \addplot[red,forget plot] coordinates{(5, 7)(6, 7)};
+            \addplot[red,forget plot] coordinates{(6, 1)(7, 1)};
+            \addplot[red,forget plot] coordinates{(7, 0)(8, 0)};
+
+            \draw[dotted] (axis cs:1,  0) -- (axis cs:1,  91);
+            \draw[dotted] (axis cs:2,  91) -- (axis cs:2,  61);
+            \draw[dotted] (axis cs:3,  61) -- (axis cs:3, 37);
+            \draw[dotted] (axis cs:4, 37) -- (axis cs:4, 19);
+            \draw[dotted] (axis cs:5, 19) -- (axis cs:5,7);
+            \draw[dotted] (axis cs:6, 7) -- (axis cs:6,1);            
+            \draw[dotted] (axis cs:7, 1) -- (axis cs:7,0);            
+            \addplot[discontinuityred,forget plot] coordinates{(1,0)(2,91)(3,61)(4,37)(5,19)(6,7)(7,1)};
+            \addplot[continuityred,forget plot] coordinates{(1,91)(2,61)(3,37)(4,19)(5,7)(6,1)(7,0)};
+    \end{axis}
+}

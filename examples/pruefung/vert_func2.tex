@@ -1,0 +1,52 @@
+{
+    \begin{axis}[domain=0:8,
+            axis x line=bottom, % no box around the plot, only x and y axis
+            axis y line=left, % the * would suppress the arrow tips
+            xlabel=Augenzahl,
+            ylabel=Prozent,
+            legend pos=north west,
+            samples=50,
+            height=6cm,
+            width=10cm,
+            clip=false]
+            \addplot[blue] coordinates{(-1,0)(1,0)};
+            \addlegendentry[align=left]{Vert.fkt. $f_Y(y)$};%TODO: add a better label
+            \addplot[blue,forget plot] coordinates{(1,0.46)(2,0.46)};
+            \addplot[blue,forget plot] coordinates{(2,3.7)(3,3.7)};
+            \addplot[blue,forget plot] coordinates{(3,12.5)(4,12.5)};
+            \addplot[blue,forget plot] coordinates{(4,29.63)(5,29.63)};
+            \addplot[blue,forget plot] coordinates{(5,57.87)(6,57.87)};
+            \addplot[blue,forget plot] coordinates{(6,100)(8,100)};
+
+            \draw[dotted] (axis cs:1,0) -- (axis cs:1,0.46);
+            \draw[dotted] (axis cs:2,0.46) -- (axis cs:2,3.7);
+            \draw[dotted] (axis cs:3,3.7) -- (axis cs:3,12.5);
+            \draw[dotted] (axis cs:4,12.5) -- (axis cs:4,29.63);
+            \draw[dotted] (axis cs:5,29.63) -- (axis cs:5,57.87);
+            \draw[dotted] (axis cs:6,57.87) -- (axis cs:6,100);
+            \addplot[discontinuityblue,forget plot] coordinates{(1,0)(2,0.46)(3,3.7)(4,12.5)(5,29.63)(6,57.87)};
+            \addplot[continuityblue,forget plot] coordinates{(1,0.46)(2,3.7)(3,12.5)(4,29.63)(5,57.87)(6,100)};
+
+
+            \addplot[red] coordinates{(-1,0)(1,0)};
+            \addlegendentry[align=left]{Vert. diskret};%TODO: add better label
+            \addplot[red,forget plot] coordinates{(1,0.46)(2,0.46)};
+            \addplot[red,forget plot] coordinates{(2,3.24)(3,3.24)};
+            \addplot[red,forget plot] coordinates{(3,8.8)(4,8.8)};
+            \addplot[red,forget plot] coordinates{(4,17.13)(5,17.13)};
+            \addplot[red,forget plot] coordinates{(5,28.24)(6,28.24)};
+            \addplot[red,forget plot] coordinates{(6,42.24)(7,42.24)};
+            \addplot[red,forget plot] coordinates{(7,0)(8,0)};
+
+            \draw[dotted] (axis cs:1,0) -- (axis cs:1,0.46);
+            \draw[dotted] (axis cs:2,0.46) -- (axis cs:2,3.24);
+            \draw[dotted] (axis cs:3,3.24) -- (axis cs:3,8.8);
+            \draw[dotted] (axis cs:4,8.8) -- (axis cs:4,17.13);
+            \draw[dotted] (axis cs:5,17.13) -- (axis cs:5,28.24);
+            \draw[dotted] (axis cs:6,28.24) -- (axis cs:6,42.24);
+            \draw[dotted] (axis cs:7,42.24) -- (axis cs:7,0);
+
+            \addplot[discontinuityred,forget plot] coordinates{(1,0)(2,0.46)(3,3.24)(4,8.8)(5,17.13)(6,28.24)(7,42.24)};
+            \addplot[continuityred,forget plot] coordinates{(1,0.46)(2,3.24)(3,8.8)(4,17.13)(5,28.24)(6,42.24)(7,0)};
+    \end{axis}
+}

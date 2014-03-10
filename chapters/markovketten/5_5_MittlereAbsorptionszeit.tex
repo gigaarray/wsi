@@ -1,0 +1,176 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+%\documentclass[a4paper]{article}
+%\usepackage[ascii]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[english,ngerman]{babel}
+%\usepackage{amsmath}
+%\usepackage{amssymb,amsfonts,textcomp}
+%\usepackage{color}
+%\usepackage{array}
+%\usepackage{hhline}
+%\usepackage{hyperref}
+%\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+% Page layout (geometry)
+%\setlength\voffset{-1in}
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%\setlength\textheight{25.7cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{0.0cm}
+%\setlength\headheight{0cm}
+%\setlength\headsep{0cm}
+% Footnote rule
+%\setlength{\skip\footins}{0.119cm}
+%\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+%\makeatletter
+%\newcommand\ps@Standard{
+%  \renewcommand\@oddhead{}
+%  \renewcommand\@evenhead{}
+%  \renewcommand\@oddfoot{}
+%  \renewcommand\@evenfoot{}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\makeatother
+%\pagestyle{Standard}
+%\title{}
+%\author{}
+%\date{2014-02-25T10:01:15.251000000}
+%\begin{document}
+\begin{uebsp}
+
+{\centering\bfseries
+Altes Beispiel 5.5
+\par}
+
+
+%\bigskip
+\index{mittlere Absorptionszeit!Beispiel}
+Um die mittlere Zeit bis zur Absorption einmal praktisch zu berechnen
+kehren wir zur\"uck zu unserem Beispiel 4.1. \ Unsere absorbierenden
+Zust\"ande sind hier: \{0\}: {\quotedblbase}Spieler A hat kein Kapital
+mehr und verloren{\textquotedblleft} \ und \{a+b\}:
+{\quotedblbase}Spieler A hat alles und gewonnen{\textquotedblleft}.\\
+
+
+\begin{center}\textbf{Lösung zu Übung 5.5}\end{center}
+
+%\bigskip
+
+Somit wissen wir bereits:  $m_{0}=0$ und  $m_{a+b}=0$ 
+
+
+%\bigskip
+
+F\"ur unsere anderen Zust\"ande gilt: 
+
+\begin{equation*}
+m_{i}=1+\sum _{j}p_{\mathit{ij}}m_{j}
+\end{equation*}
+
+%\bigskip
+
+Wenn das Summenzeichen im ersten Moment auch etwas abschreckend wirkt,
+wird sich gleich herausstellen, dass es halb so schlimm ist, da ohnehin
+die meisten  $p_{\mathit{ij}}=0$ sind. \ Denn von unserem Zustand i
+gelangen wir nur zu den beiden Nachbarzust\"anden i-1 und i+1 und das
+jeweils mit einer Wahrscheinlichkeit von  $\frac{1}{2}$ . D.h.: 
+$m_{i}=1+\frac{1}{2}m_{i-1}+\frac{1}{2}m_{i+1}$
+
+
+%\bigskip
+
+Sehen wir uns nun an wie die Folge der  $m_{i}$ verl\"auft. 
+
+
+%\bigskip
+
+
+%\bigskip
+
+\begin{equation*}
+m_{1}=1+\frac{1}{2}m_{0}+\frac{1}{2}m_{2}=1+0+\frac{1}{2}m_{2}=1+\frac{1}{2}m_{2}
+\end{equation*}
+
+%\bigskip
+
+\begin{equation*}
+\rightarrow m_{2}=2m_{1}-2=2(m_{1}-1)
+\end{equation*}
+
+%\bigskip
+
+ $m_{2}=1+\frac{1}{2}m_{1}+\frac{1}{2}m_{3}$  daraus folgt: 
+$m_{3}=2m_{2}-2-m_{1}$ setzen wir nun f\"ur  $m_{2}$ den oben
+erhaltenen Ausdruck ein, erhalten wir:
+
+
+%\bigskip
+
+
+\bigskip
+
+\begin{equation*}
+m_{3}=2(2(m_{1}-1))-2-m_{1}=4m_{1}-4-2-m_{1}=3m_{1}-6=3(m_{1}-2)
+\end{equation*}
+Wir k\"onnen also folgende Vermutung aufstellen:
+
+
+%\bigskip
+
+
+%\bigskip
+
+\begin{equation*}
+m_{i}=i(m_{1}-(i-1))=i(m_{1}+1-i)
+\end{equation*}
+Nun w\"are es noch sch\"on zu erfahren wie gro{\ss}  $m_{1}$ konkret
+ist. Dies k\"onnen wir auch berechnen, da wir \ wissen, dass
+$m_{a+b}=0$.
+
+
+%\bigskip
+
+
+%\bigskip
+
+\begin{equation*}
+m_{a+b}=(a+b)(m_{1}+1-(a+b))=(a+b)(m_{1}+1-a-b)=0
+\end{equation*}
+Wir k\"onnen davon ausgehen, dass  $(a+b)$ gr\"o{\ss}er 0 ist. Damit der
+Ausdruck oben also 0 wird, muss  $(m_{1}+1-a-b)=0$ sein.
+
+
+%\bigskip
+
+So erhalten wir: 
+
+
+%\bigskip
+
+\begin{equation*}
+m_{1}=a+b-1
+\end{equation*}
+
+\bigskip
+
+Damit k\"onnen wir die mittlere Absorptionszeit berechnen f\"ur den
+Fall, dass wir in Zustand a (so viel Kapital hat Spieler A zu beginn)
+starten.
+
+
+\bigskip
+
+\begin{equation*}
+m_{a}=a(m_{1}-(a-1))=a(a+b-1-a+1)=a(b)=\mathit{ab}
+\end{equation*}
+\begin{equation*}
+m_{b}=b(m_{1}-(b-1))=b(a+b-1-b+1)=b(a)=\mathit{ab}
+\end{equation*}
+
+%\bigskip
+
+%\end{document}
+\end{uebsp}

@@ -1,0 +1,97 @@
+\documentclass{scrreprt}
+\usepackage{style}
+
+\subject{Übungsbeispiele}
+\title{107.A04 Wahrscheinlichkeitstheorie und stochastische Prozesse 
+für Informatik 4.0}
+\author{Byte Unit}
+\uppertitleback{Unter Creative Commons Attribution Sharealike Lizenz}
+\lowertitleback{\textcopyleft 2014 Byte Unit}
+\date{\today}
+%\publishers{}
+
+\makeatletter
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle = {\@title},
+        pdfsubject={\@subtitle},
+        pdfauthor={\@author},
+        pdfproducer={Latex (Debian/GNU Linux)},
+        pdfkeywords={\@title, \@subject}
+    }
+}
+\makeatother
+
+%do some kind of magic :-)
+\renewcommand{\thechapter}{\arabic{ExercPage}.}
+\renewcommand{\newExercPage}{\exercPage
+            \newpage
+            \chapter{Übung}}
+\ExerciseLevelInToc{section}
+
+\renewcommand{\reference}[3]{#1 (siehe #2 im Skriptum)}
+
+\setcounter{tocdepth}{5}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newExercPage
+\input{examples/round1/bsp1}
+\input{examples/round1/bsp2}
+\input{examples/round1/bsp3}
+\input{examples/round1/bsp4}
+\input{examples/round1/bsp5}
+\input{examples/round1/bsp6}
+\input{examples/round1/bsp7}
+
+\newExercPage
+\input{examples/round2/bsp1}
+\input{examples/round2/bsp2}
+\input{examples/round2/bsp3}
+\input{examples/round2/bsp4}
+\input{examples/round2/bsp5}
+\input{examples/round2/bsp6}
+\input{examples/round2/bsp7}
+
+\newExercPage
+\input{examples/round3/bsp1}
+\input{examples/round3/bsp2}
+\input{examples/round3/bsp3}
+\input{examples/round3/bsp4}
+\input{examples/round3/bsp5}
+\input{examples/round3/bsp6}
+\input{examples/round3/bsp7}
+
+\newExercPage
+\newExercPage
+\newExercPage
+%\input{examples/round4/bsp1}
+%\input{examples/round4/bsp2}
+%\input{examples/round4/bsp3}
+%\input{examples/round4/bsp4}
+%\input{examples/round4/bsp5}
+%\input{examples/round4/bsp6}
+%\input{examples/round4/bsp7}
+
+\newExercPage
+\input{examples/round7/bsp6}
+\input{examples/round7/bsp7}
+\newExercPage
+\input{examples/round8/bsp1}
+\input{examples/round8/bsp2}
+\input{examples/round8/bsp3}
+\input{examples/round8/bsp4}
+\newExercPage
+\input{examples/round9/bsp1}
+\input{examples/round9/bsp2}
+\input{examples/round9/bsp3}
+\input{examples/round9/bsp4}
+\newExercPage
+
+\newExercPage
+\input{examples/round11/bsp1}
+\input{examples/round11/bsp2}
+
+\end{document}

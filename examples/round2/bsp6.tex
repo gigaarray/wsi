@@ -1,0 +1,41 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.6]
+$X$ und $Y$ haben eine gemeinsame Verteilung mit der Dichte \\
+\[ f(x,y) = \left\{
+  \begin{array}{l l}
+    $c(x+y)$ & \quad \text{für $0 \le x$, $y \le 1$}\\
+    0  & \quad \text{sonst} \\
+  \end{array} \right.\]
+Bestimmen $c$ und die Randdichten von $X$ und $Y$.
+\end{Exercise}
+\begin{Answer}
+Eigenschaften der gemeinsamen Dichtefunktion: \\
+
+...\\
+
+Mit dem 2. Punkt folgt: \\
+$\int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{XY}(x,y)dxdy=1$ \\
+Da sowohl x als auch y nur im Intervall [0,1] interessant sind, kann man die Integralgrenzen einschränken:\\
+
+$\int\limits_{0}^{1} \int\limits_{0}^{1} f_{XY}(x,y)dxdy=\int\limits_{0}^{1} \int\limits_{0}^{1} c \cdot (x+y)dxdy = 1$\\
+$c \cdot \int\limits_{0}^{1} \int\limits_{0}^{1} (x+y)dxdy$\\
+$c \cdot \int\limits_{0}^{1}( \frac{x^2}{2}+xy )|_{x=0}^{1} dy$\\
+$c \cdot \int\limits_{0}^{1} (\frac{1}{2}+y )dy = c \cdot (\frac{y}{2}+\frac{y^2}{2})|_{y=0}^{1} = c \cdot (\frac{1}{2}+\frac{1}{2})=c \Rightarrow c=1$\\ \\
+
+Die Randdichten von X und Y sind definiert durch:
+
+\begin{itemize}
+\item $f_X(x)=\int\limits_{-\infty}^\infty f_{XY}(x,y)dy$
+\item $f_Y(y)=\int\limits_{-\infty}^\infty f_{XY}(x,y)dx$
+\end{itemize} 
+
+Randdichte von X:\\
+$f_X(x)=\int\limits_{-\infty}^\infty f_{XY}(x,y)dy = c \cdot \int\limits_{0}^1 (x+y) dy = c \cdot (xy + \frac{y^2}{2})|_{0}^1 = c \cdot (x+\frac{1}{2}) \textbf{ und mit c=1 folgt:}\\ f_X(x)= (x+\frac{1}{2})$ \\
+
+Randdichte von Y:\\
+$f_Y(y)=\int\limits_{-\infty}^\infty f_{XY}(x,y)dx =c \cdot \int\limits_{0}^1 (x+y) dx = c \cdot (\frac{x^2}{2} + xy )|_{0}^1 = c \cdot (y+\frac{1}{2})= (y+\frac{1}{2}) $\\
+
+
+
+\end{Answer}
+\end{uebsp}

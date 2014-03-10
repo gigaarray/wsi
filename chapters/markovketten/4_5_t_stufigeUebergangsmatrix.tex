@@ -1,0 +1,557 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+%\documentclass[a4paper]{article}
+%\usepackage[ascii]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[english,english]{babel}
+%\usepackage{amsmath}
+%\usepackage{amssymb,amsfonts,textcomp}
+%\usepackage{color}
+%\usepackage{array}
+%\usepackage{hhline}
+%\usepackage{hyperref}
+%\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+%\usepackage[pdftex]{graphicx}
+% Page layout (geometry)
+%\setlength\voffset{-1in}
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%\setlength\textheight{25.7cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{0.0cm}
+%\setlength\headheight{0cm}
+%\setlength\headsep{0cm}
+% Footnote rule
+%\setlength{\skip\footins}{0.119cm}
+%\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+%\makeatletter
+%\newcommand\ps@Standard{
+%%  \renewcommand\@oddhead{}
+%  \renewcommand\@evenhead{}
+%  \renewcommand\@oddfoot{}
+%  \renewcommand\@evenfoot{}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\makeatother
+%\pagestyle{Standard}
+%\title{}
+%\author{}
+%\date{2014-02-24T12:00:22.814000000}
+%\begin{document}
+\begin{uebsp}
+\begin{Exercise}[label=ex:4.5]
+Die Übergangsmatrix einer Markovkette mit 3 Zuständen ist
+\[P=\left(\begin{array}{ccc}
+1/2 & 1/4 & 1/4\\
+1/4 & 1/2 & 1/4\\
+1/4 & 1/4 & 1/2
+\end{array}\right)\]
+
+Bestimmen Sie die $t$-Stufige Übergangsmatrix $P(t)$ und ihren Grenzwert für $t\rightarrow\infty$.
+\end{Exercise}
+
+\begin{Answer}
+
+\bigskip
+
+{\selectlanguage{english}
+Wir k\"onnen die t-stufige \"Ubergangsmatrix \ berechnen indem wir die
+Potenzen  $P^{t}$ berechnen, denn  $P(t)=P^{t}$ .}
+
+
+\bigskip
+
+{\selectlanguage{english}
+Die Potenzen einer Matrix kann man einfacher berechnen, wenn man die
+Matrix diagonalisiert. \index{Diagonalmatrix!Beispiel}\ Dazu der folgende Satz:}
+
+
+\bigskip
+
+{\selectlanguage{english}
+\textbf{Satz: }Sind die Vektoren 
+$\underline{{x_{1}}},\underline{{x_{2}}},...\underline{{x_{n}}}\in
+K^{n}$ linear unabh\"angig und Eigenvektoren einer Matrix  $A\in
+K^{\mathit{nxn}}$ zu den Eigenwerten  $\lambda _{1,}\lambda
+_{2,}...\lambda _{n},\in K$ , so gilt mit 
+$T=(\begin{matrix}\underline{{x_{1}}}&\underline{{x_{2}}}&\underline{{x_{n}}}\end{matrix})$
+:}
+
+
+\bigskip
+
+
+\bigskip
+
+\begin{equation*}
+A=T\cdot \mathit{diag}(\lambda _{1,}\lambda _{2,}...\lambda _{n},)\cdot
+T^{-1}
+\end{equation*}
+
+\bigskip
+
+{\selectlanguage{english}
+Man bezeichnit die Matrix in so einem Fall als diagonalisierbar..}
+
+
+\bigskip
+
+{\selectlanguage{english}
+Und f\"ur die Potenzen einer Matrix gilt:}
+
+
+\bigskip
+
+\begin{equation*}
+A^{k}=T\cdot \mathit{diag}(\lambda _{1}^{k},\lambda _{2}^{k},...\lambda
+_{n}^{k},)\cdot T^{-1}
+\end{equation*}
+
+\bigskip
+
+{\selectlanguage{english}
+Beginnen wir also damit die Eigenwerte unserer Matrix zu berechen:}
+
+
+\bigskip
+
+{\selectlanguage{english}
+\textbf{Satz: }Ein Skalar  $\lambda _{1}\in K$ hei{\ss}t genau dann
+Eigenwert einer Matrix  $A\in K^{\mathit{nxn}}$ wenn gilt:}
+
+
+\bigskip
+
+\begin{equation*}
+\mathit{det}(A-\lambda \cdot I_{n})=0
+\end{equation*}
+
+\bigskip
+
+{\selectlanguage{english}
+Wobei  $I_{n}$ die entsprechende Einheitsmatrix ist.}
+
+
+\bigskip
+
+{\selectlanguage{english}
+Wir berechnen also: }
+
+
+\bigskip
+
+{\selectlanguage{english}
+ $\mathit{det}(P-\lambda \cdot I_{n})=0$  was gleichbedeutend ist mit \ 
+$\mathit{det}(4P-\underbrace{4\lambda }_{\mu }\cdot I_{n})=0$ damit
+bekommen wir die l\"astigen Br\"uche weg!  $\mathit{det}(4P-\mu \cdot
+I_{n})=0$ }
+
+
+\bigskip
+
+
+%%\bigskip
+
+
+%%\bigskip
+
+\begin{equation*}
+P=\left(\begin{matrix}\frac{1}{2}&\frac{1}{4}&\frac{1}{4}\\\frac{1}{4}&\frac{1}{2}&\frac{1}{4}\\\frac{1}{4}&\frac{1}{4}&\frac{1}{2}\end{matrix}\right)=\frac{1}{4}\cdot
+\left(\begin{matrix}2&1&1\\1&2&1\\1&1&2\end{matrix}\right)
+\end{equation*}
+
+%%\bigskip
+
+
+%%\bigskip
+
+ $4P=\left(\begin{matrix}2&1&1\\1&2&1\\1&1&2\end{matrix}\right)$
+
+
+%%\bigskip
+
+\begin{equation*}
+\mathit{det}(\left(\begin{matrix}2&1&1\\1&2&1\\1&1&2\end{matrix}\right)-\left(\begin{matrix}\mu
+&0&0\\0&\mu &0\\0&0&\mu \end{matrix}\right))=0
+\end{equation*}
+
+%%\bigskip
+
+
+%%\bigskip
+
+
+%%\bigskip
+
+\begin{equation*}
+\mathit{det}(\left(\begin{matrix}2-\mu &1&1\\1&2-\mu &1\\1&1&2-\mu
+\end{matrix}\right))
+\end{equation*}
+
+%%\bigskip
+
+{\selectlanguage{english}
+Um uns sp\"ater das Auswerten der unterschiedlichen  $\mu $ zu
+erleichtern, Formen wir noch etwas um. Wir addieren Spalte 2 und Spalte
+3 zu unserer ersten Spalte dazu und erhalten:}
+
+\begin{equation*}
+\mathit{det}(\left(\begin{matrix}4-\mu &1&1\\4-\mu &2-\mu &1\\4-\mu
+&1&2-\mu \end{matrix}\right))=0
+\end{equation*}
+
+%%\bigskip
+
+{\selectlanguage{english}
+Nun ist Vorsicht geboten! Bei Determinanten (nicht bei Matrizen!!!)
+gilt:}
+
+
+%%\bigskip
+\begin{uebsp_theory}
+Siehe Anhang \ref{sec:det_regeln}:
+\begin{enumerate}[i)]
+    \item \label{itm:det_regel_multi} Multipliziert man die Spalte/Zeile einer Matrix $A$ mit einem Faktor $\lambda\in K$, so ist die Determinanten der neuen Matrix $\det A'=\lambda\cdot \det A$.
+    \item \label{itm:det_regel_addi}Addiert man zu einer Spalte/Zeile einer Matrix das Vielfache einer anderen Spalte/Zeile, so verändert sich der Wert der Determinante nicht.
+    \item Vertauscht man in einer Matrix $A$ zwei Spalten/Zeilen, so ist die Determinante der neuen Matrix $\det A'=-\det A$.
+\end{enumerate}
+\end{uebsp_theory}
+
+{\selectlanguage{english}
+D.h.: wollen wir nun aus Spalte 1  $4-\mu $ herausheben, m\"ussen wir
+mit die neue Determinante mit  $4-\mu $ multiplizieren um den Ausdruck
+im gesamten nicht zu ver\"andern. Wir erhalten also:}
+
+
+%%\bigskip
+
+
+%%\bigskip
+
+\begin{equation*}
+(4-\mu )\cdot \mathit{det}(\left(\begin{matrix}1&1&1\\1&2-\mu
+&1\\1&1&2-\mu \end{matrix}\right))=0
+\end{equation*}
+
+%%\bigskip
+
+{\selectlanguage{english}
+Subtrahieren wir nun noch Zeile 1 von Zeile 2 und Zeile 3 (dies
+ver\"andert den Wert der Determinante nicht.}
+
+
+%%\bigskip
+
+{\selectlanguage{english}
+ $(4-\mu )\cdot \mathit{det}(\left(\begin{matrix}1&1&1\\0&1-\mu
+&0\\0&0&1-\mu \end{matrix}\right))=0$  Zu Erinnerung: }
+
+\begin{uebsp_theory}\textbf{Laplace'scher Entwicklungssatz:}\index{Entwicklungssatz!Laplace|see{Laplace'scher Entwicklungssatz}}\index{Laplace'scher Entwicklungssatz} Sei $A=(a_{ij})\in K^{n\times n}$.
+    \begin{enumerate}[i)]
+        \item \textbf{Entwicklung nach der $i$-ten Zeile}: Für jedes $i(1\leq i\leq n)$ gilt:    
+            \[\det A=\sum_{j=1}^na_{ij}A_{ij}=\sum_{j=1}^n(-1)^{i+j}a_{ij}D_{ij}\]
+        \item \textbf{Entwicklung nach der $j$-ten Spalte}: Für jedes $j(1\leq i\leq n)$ gilt:
+            \[\det A=\sum_{i=1}^na_{ij}A_{ij}=\sum_{i=1}^n(-1)^{i+j}a_{ij}D_{ij}\] 
+    \end{enumerate}
+    Mit Hilfe dieses Satzes kann das Berechnen der Determinante einer $n\times n$-Matrix auf das Berechnen von $n$ Determinanten von $(n-1)\times (n-1)$-Matrizen zurückgeführt werden. Dabei kann die Determinante nach jeder beliebigen Zeile oder Spalte entwickelt werden.
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Entwickelt man die Determinante
+    \[\begin{array}{|ccc|}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+    \end{array}\]
+    nach der 1. Zeile, so ergibt sich:
+    \begin{eqnarray*}\begin{array}{|ccc|}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+    \end{array}&=&1\cdot \begin{array}{|cc|}5 & 6\\8&9\end{array}-2\cdot \begin{array}{|cc|}4 & 6\\7&9\end{array}+3\cdot \begin{array}{|cc|}4 & 5\\7&8\end{array}\\
+    &=&(5\cdot 9-6\cdot 8)-2\cdot(4\cdot 9-6\cdot 7)+3\cdot (4\cdot 8-5\cdot 7)=0
+\end{eqnarray*}
+\end{uebsp_theory}
+
+{\selectlanguage{english}
+F\"ur uns ergibt sich: \ }
+
+
+%%\bigskip
+
+
+%%\bigskip
+
+{\selectlanguage{english}
+ $\mathit{det}(\left(\begin{matrix}1&1&1\\0&1-\mu &0\\0&0&1-\mu
+\end{matrix}\right))=1\cdot \mathit{det}(\begin{matrix}1-\mu
+&0\\0&1-\mu \end{matrix})-0+0=(1-\mu )^{2}$  d.h.:}
+
+{\selectlanguage{english}
+\ woraus folgt, dass:}
+
+{\selectlanguage{english}
+ $\mu _{1}=4\text{ und }\mu _{2,3}=1$  bzw.  $\lambda _{1}=1\text{ und
+}\lambda _{2,3}=\frac{1}{4}$ }
+
+
+%%\bigskip
+
+{\selectlanguage{english}
+Zur Bestimmung der Eigenvektoren, ist es aber noch ganz hilfreich mit 
+$\mu $ weiter zu rechnen. Denn dazu m\"ussen wir:}
+
+\begin{equation*}
+(P-\lambda \cdot I_{n})\cdot \underline{{x}}=0
+\end{equation*}
+{\selectlanguage{english}
+l\"osen, was gleich bedeutend ist mit:}
+
+
+%\bigskip
+
+\begin{equation*}
+(4P-\mu \cdot I_{n})\cdot \underline{{x}}=0
+\end{equation*}
+{\selectlanguage{english}
+Los gehts!}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+F\"ur  $\mu _{1}=4$ :}
+
+
+%\bigskip
+
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Wir erinnern uns an lineare Gleichungssysteme und das
+Gau{\ss}{\textquotesingle}sche Eliminationsverfahren mit der
+erweiterten Systemmatrix.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+ $\left(\begin{matrix}2-\mu &1&1&\text{{\textbar}}0\\1&2-\mu
+&1&\text{{\textbar}}0\\1&1&2-\mu
+&\text{{\textbar}}0\end{matrix}\right)$  
+$\left(\begin{matrix}-2&1&1&\text{{\textbar}}0\\1&-2&1&\text{{\textbar}}0\\1&1&-2&\text{{\textbar}}0\end{matrix}\right)\rightarrow
+\text{ ...}\rightarrow $ }
+
+{\selectlanguage{english}
+mittels geeigneter Zeilen-/Spaltenumformungen versuchen wir nun auf eine
+Form 
+$\left(\begin{matrix}1&0&0&\text{{\textbar}}b_{1}\\0&1&0&\text{{\textbar}}b_{2}\\0&0&1&\text{{\textbar}}b_{3}\end{matrix}\right)$
+ zu gelangen.}
+
+{\selectlanguage{english}
+Aber wie wir sehen gelingt uns das nicht wir erhalten:}
+
+
+%\bigskip
+
+\begin{equation*}
+\left(\begin{matrix}1&0&-1&\text{{\textbar}}0\\0&1&-1&\text{{\textbar}}0\\0&0&0&\text{{\textbar}}0\end{matrix}\right)
+\end{equation*}
+Wir wir nun sehen, tritt Fall 3 ein, das System ist mehrdeutig lösbar.\\
+
+im folgenden bezeichnet $r$ den Rang der Matrix (somit die Anzahl der Zeilen, die nach dem gaußschen Eliminationsverfahren ungleich $0$ sind).
+
+\begin{uebsp_theory}
+\textbf{Man unterscheidet nun 3 Fälle:}
+\begin{enumerate}[1.]
+    \item Ist $r<m$ und gibt es ein Element $b_j\neq 0, r<j\leq m$, so ist $\text{rg}(A^* b^*)>\text{rg}(A^*)$ und somit das ursprüngliche lineare Gleichungssystem $A\vec x=\vec b$ \textbf{unlösbar}.
+    \item Ist nach dem Streichen der Nullzeilen $r=n$, so gibt es eine \textbf{eindeutige Lösung}.
+        Die Unbekannte $x_n$ kann direkt bestimmt werden, darauf $x_{n-1}$ usw.
+    \item Ist nach dem Streichen der Nullzeilen $r<n$, so gibt es (im Fall eines unendlichen Körpers $K$) unendlich viele Lösungen. Hier ist $\text{rg}(A^*b^*)=\text{rg}(A^*)$, und das ursprüngliche lineare Gleichungssystem $A\cdot \vec x=\vec b$ ist lösbar. Es hat (bis auf etwaige Koordinatenvertauschungen, die in $T$ kodiert sin) dieselben Lösungen wie $A^*\cdot \vec x=\vec b^*$. Wir erhalten eine \textbf{mehrdeutige Lösung} mit $s=n-r$ Parametern $t_1,...,t_s$.
+\end{enumerate}
+\end{uebsp_theory}
+
+{\selectlanguage{english}Daher m\"ussen wir einen
+Parameter s einf\"ugen.}
+
+
+%\bigskip
+
+{\selectlanguage{english}
+
+$\underline{{x}}=\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\end{matrix}\right)$
+und  $A\cdot \underline{{x}}=\underline{{b}}$  ist bei uns \ 
+$\left(\begin{matrix}1&0&-1\\0&1&-1\\0&0&0\end{matrix}\right)\cdot
+\underline{{x}}=\underline{{0}}$ }
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Was dem Gleichungssystem }
+
+
+%\bigskip
+
+\begin{equation*}
+\begin{matrix}1x_{1}+0x_{2}-1x_{3}=0\\0x_{1}+1x_{2}-1x_{3}=0\end{matrix}\rightarrow
+\text{  ...umstellen...  
+}\begin{matrix}x_{1}=x_{3}\\x_{2}=x_{3}\end{matrix}
+\end{equation*}
+{\selectlanguage{english}
+Wir setzen $x_{3}=s$ . \ D.h.:  $\underline{{x}}=s\cdot
+\left(\begin{matrix}1\\1\\1\end{matrix}\right)$ }
+
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+F\"ur  $\mu _{2,3}=1$ erhalten wir:}
+
+
+%\bigskip
+
+\begin{equation*}
+\left(\begin{matrix}1&1&1&\text{{\textbar}}0\\0&0&0&\text{{\textbar}}0\\0&0&0&\text{{\textbar}}0\end{matrix}\right)
+\end{equation*}
+{\selectlanguage{english}
+was bedeutet, dass wir 2 Parameter einf\"ugen m\"ussen. Damit erhalten
+wir:}
+
+
+%\bigskip
+
+\begin{equation*}
+\underline{{x}}=t_{2}\cdot
+\left(\begin{matrix}-1\\1\\0\end{matrix}\right)+t_{3}\cdot
+\left(\begin{matrix}-1\\0\\1\end{matrix}\right)
+\end{equation*}
+
+%\bigskip
+
+
+%\bigskip
+
+{\selectlanguage{english}
+Insgesamt haben wir also 3 linear unabh\"angige Vektoren die wir zur
+Eigenwertmatrix zusammenfassen:}
+
+\begin{equation*}
+T=\left(\begin{matrix}1&-1&-1\\1&1&0\\1&0&1\end{matrix}\right)
+\end{equation*}
+
+%\bigskip
+
+{\selectlanguage{english}
+Es folgt noch das m\"uhsame und Fehleranf\"allige \ invertertieren von
+T....}
+
+
+%\bigskip
+
+\[
+\left(\begin{array}{ccc|ccc}
+1 & -1 & -1 & 1 & 0 & 0\\
+1 &  1 &  0 & 0 & 1 & 0\\
+1 &  0 &  1 & 0 & 0 & 1
+\end{array}\right)\Rightarrow
+\left(\begin{array}{ccc|ccc}
+2 & -1 &  0 & 1 & 0 & 1\\
+1 &  1 &  0 & 0 & 1 & 0\\
+1 &  0 &  1 & 0 & 0 & 1
+\end{array}\right)\Rightarrow
+\left(\begin{array}{ccc|ccc}
+3 & 0 &  0 & 1 & 1 & 1\\
+1 &  1 &  0 & 0 & 1 & 0\\
+1 &  0 &  1 & 0 & 0 & 1
+\end{array}\right)\Rightarrow
+\]
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 &  0 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3}\\
+1 &  1 &  0 & 0 & 1 & 0\\
+1 &  0 &  1 & 0 & 0 & 1
+\end{array}\right)\Rightarrow
+\left(\begin{array}{ccc|ccc}
+1 & 0 &  0 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3}\\
+0 &  1 &  0 & -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3}\\
+1 &  0 &  1 & 0 & 0 & 1
+\end{array}\right)\Rightarrow
+\]
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 &  0 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3}\\
+0 &  1 &  0 & -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3}\\
+0 &  0 &  1 & -\frac{1}{3} & -\frac{1}{3} & \frac{2}{3}
+\end{array}\right)\Rightarrow
+T^{-1}=\left(\begin{array}{ccc}
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3}\\
+ -\frac{1}{3} & \frac{2}{3} & -\frac{1}{3}\\
+ -\frac{1}{3} & -\frac{1}{3} & \frac{2}{3}
+ \end{array}\right)=\frac{1}{3}\left(\begin{array}{ccc}
+ 1 & 1 & 1\\
+ -1 & 2 & -1\\
+ -1 & -1 & 2
+ \end{array}\right)\]
+ Nun noch in die Gleichung $T\cdot D^t\cdot T^{-1}$ einsetzen:
+ \[\left(\begin{array}{ccc}
+ 1 & -1 & -1\\
+ 1 & 1 & 0\\
+ 1 & 0 & 1
+ \end{array}\right)
+ \left(\begin{array}{ccc}
+ 1 & 0 & 0\\
+ 0 &\left(\frac{1}{4}\right)^t & 0\\
+ 0 & 0 & \left(\frac{1}{4}\right)^t
+ \end{array}\right)
+ \frac{1}{3}\left(\begin{array}{ccc}
+ 1 & 1 & 1\\
+ -1 & 2 & -1\\
+ -1 & -1 & 2
+ \end{array}\right)=\]
+ \[\frac{1}{3}\left(\begin{array}{ccc}
+ 1 & -4^{-t} & -4^{-t}\\
+ 1 & 4^{-t} & 0\\
+ 1 & 0 & 4^{-t}
+ \end{array}\right)
+ \left(\begin{array}{ccc}
+ 1 & 1 & 1\\
+ -1 & 2 & -1\\
+ -1 & -1 & 2
+ \end{array}\right)=\]
+ \[
+ \frac{1}{3}\left(\begin{array}{ccc}
+ 1+2\cdot 4^{-t} & 1-4^{-t} & 1-4^{-t}\\
+ 1-4^{-t} & 1+2\cdot 4^{-t} & 1-4^{-t}\\
+ 1-4^{-t} & 1-4^{-t} & 1+2\cdot 4^{-t}
+ \end{array}\right)=\]
+ \[\frac{1}{3}\left(
+ \left(\begin{array}{ccc}
+ 1 & 1 & 1\\
+ 1 & 1 & 1\\
+ 1 & 1 & 1
+ \end{array}\right) +4^{-t}\left(\begin{array}{ccc}
+ 2 & -1 & -1\\
+ -1 & 2 & -1\\
+ -1 & -1 & 2
+ \end{array}\right)
+ \right)
+ \]
+ Mit Limes $\lim\limits_{t\rightarrow \infty}$:
+ \[\lim_{t\rightarrow \infty} p(t)=\frac{1}{3}
+ \left(\begin{array}{ccc}
+ 1 & 1 & 1\\
+ 1 & 1 & 1\\
+ 1 & 1 & 1
+ \end{array}\right)\]
+\end{Answer}
+\end{uebsp}

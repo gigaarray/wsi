@@ -1,0 +1,35 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:8.4]
+Bestimmen Sie für die folgende Stichprobe einer Normalverteilung
+\[0.7\;1.3\; 1.2\; 1.5\; 1.8\; 0.9\; 1.1\; 1.4\; 1.9\; 1.7\]
+ein 95\%-Konfidenzintervall für $\mu$.
+\end{Exercise}
+\begin{Answer}
+\index{Konfidenzintervall!Beispiel}
+\index{Konfidenzintervall!für $\mu$, unbekanntes $\sigma^2$ von $\mathcal N$!Beispiel}
+\begin{enumerate}[i)]
+\item \textbf{Schätzen von $\mu$}:\\
+Für $\hat\mu_n$ gilt: \[\hat\mu_n=\overline x_n=\frac{1}{n}\sum_{i=1}^nx_i=\frac{1}{10}\sum_{i=1}^{10}x_i=\frac{13.5}{10}=1.35\]
+\item \textbf{Schätzen von $\sigma^2$}:
+\begin{uebsp_theory}
+\reference{Korrigierte Stichprobenvarianz für ML-Schätzer}{Definition}{def:stichprobenvarianz}
+\[s_n^2= \frac{1}{n-1} \sum_{i=1}^n\left(x_i-\overline x\right)^2\]
+\end{uebsp_theory}
+\[s_n^2= \frac{1}{9} \sum_{i=1}^{10}(x_i-1.35)^2=0.15\]
+
+\item \textbf{Konvidenzintevall für $\mu$ bei unbekanntem $\sigma^2$}
+\begin{uebsp_theory}
+\reference{Konfidenzintervall für $\mu$ bei unbekanntem $\sigma^2$}{Kapitel}{sec:ki_mu_unbekanntes_sigma}:
+\[KI=\left[\overline X_n-t_{n-1;{1+\gamma\over 2}}\sqrt{S_n^2\over n},
+\overline X_n+t_{n-1;{1+\gamma\over 2}}\sqrt{S_n^2\over n}\right]\]
+\end{uebsp_theory}
+\[t_{n-1;{1+\gamma\over 2}}=t_{9;{0.975}}\]
+Aus \reference{Tabelle}{Anhang}{sec:quantile_t_verteilung} der $t$-Verteilungsquantile den Wert rauslesen:
+\[t_{9;{0.975}}=2.262\]
+\item \textbf{Konfidenzintervall bilden}
+    \[KI:\left[1.35-2.262\cdot\sqrt{\frac{0.15}{10}},1.35+2.262\cdot\sqrt{\frac{0.15}{10}}\right]\Leftrightarrow\]
+\[KI:\left[1.35-2.262\cdot0.1224,1.35+2.262\cdot0.1224\right]\Leftrightarrow\left[1.35-0.277,1.35+-0.277\right]\Leftrightarrow\]
+\[KI:\left[1.073,1.627\right]\]
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

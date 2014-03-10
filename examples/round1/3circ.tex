@@ -1,0 +1,33 @@
+{
+    \def\firstcircle{(90:1cm) circle (1.25cm)}
+    \def\secondcircle{(210:1cm) circle (1.25cm)}
+    \def\thirdcircle{(330:1cm) circle (1.25cm)}
+
+
+    \fill[blue!25] \firstcircle;
+    \fill[blue!25] \secondcircle;
+    \fill[blue!25] \thirdcircle;
+
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[white] \secondcircle;
+    \end{scope}
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[white] \thirdcircle;
+    \end{scope}
+    \begin{scope}
+        \clip \secondcircle;
+        \fill[white] \thirdcircle;
+    \end{scope}
+
+    \begin{scope}
+        \clip \firstcircle;
+        \clip \secondcircle;
+        \fill[blue!25] \thirdcircle;
+    \end{scope}
+
+    \draw \firstcircle node {A};
+    \draw \secondcircle node {B};
+    \draw \thirdcircle node {C};
+}

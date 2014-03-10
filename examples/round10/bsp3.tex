@@ -1,0 +1,45 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:10.3]
+Bestimme für die Verteilung: 
+\begin{align}
+P = (0.1, 0.4, 0.05, 0.2, 0.25)
+\end{align}
+den Shannon-Code
+\end{Exercise}
+\begin{Answer}
+\index{Shannon-Code!Beispiel}
+Zuerst ordnen wir die Verteilung absteigend:\\
+\[P = (0.4, 0.25, 0.2, 0.1, 0.05)\]
+Als nächstes bestimmen wir die Codewortlängen 
+\[l_i = \lceil log_2(\frac{1}{p_i}) \rceil\]
+sowie die Verteilung 
+\[f_i = \sum_{j=1}^{i} p_j\]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline Wahrscheinlichkeit $p_i$ & Codewortlänge $l_i$ & Verteilung $f_{i-1}$ \\ 
+\hline 0.4 & 2 & 0 \\ 
+\hline 0.25 & 2 & 0.4 \\ 
+\hline 0.2 & 3 & 0.65 \\ 
+\hline 0.1 & 4 & 0.85 \\ 
+\hline 0.05 & 5 & 0.9 \\ 
+\hline 
+\end{tabular}
+\end{center}
+Die Codewörter $c_i$ erhält man durch umwandeln von $f_{i-1}$ in Binärdarstellung.\\
+In unserem Fall ergibt das:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline Wahrscheinlichkeit $p_i$ & Codewortlänge $l_i$ & Verteilung $f_{i-1}$ & Codewort $c_i$\\ 
+\hline 0.4 & 2 & 0 & 00\\ 
+\hline 0.25 & 2 & 0.4 & 01\\ 
+\hline 0.2 & 3 & 0.65 & 101\\ 
+\hline 0.1 & 4 & 0.85 & 1101\\ 
+\hline 0.05 & 5 & 0.9 & 11101\\ 
+\hline 
+\end{tabular}
+\end{center}
+\index{Mittlere Unbestimmtheit!Beispiel}
+Als mittlere Codewortlänge ergibt sich 
+\[H^*(P)=\mathbb{E}(l) = \sum_{i=1}^{5}p_i\cdot l_i = 0.4\cdot 2+0.25\cdot 2+0.2\cdot 3+0.1\cdot 4+0.05\cdot 5 = 2.55\]
+\end{Answer}
+\end{uebsp}

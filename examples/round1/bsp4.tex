@@ -1,0 +1,45 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:1.4]
+Fortsetzung zu Beispiel \ref{ex:1.3}:
+
+Bestimmen Sie die Wahrscheinlichkeit, dass in mindestens einer Spalte keine Zahlen gezogen werden.
+\end{Exercise}
+\begin{Answer}
+Wenn man sich vorstellt, dass es 5 Gruppen von Zahlen gibt: jede, bestehend aus $15$ Zahlen ($1-15$, $16-30$, ...) gesucht ist die Wahrscheinlichkeit, dass $0$ Zahlen aus dieser Gruppe gezogen werden. 
+
+\begin{uebsp_theory}
+    Mit der \reference{Hypergeometrischen Verteilung}{Kapitel}{sec:hypergeometrische_verteilung} 
+    \[p(x)={{A\choose x}{N-A\choose n-x}\over {N\choose n}}.\]
+    folgt:
+    \index{Hypergeometrische Verteilung!Beispiel}
+\end{uebsp_theory}
+
+\[\mathbb{P}(Spalte\;1)=h(0|75,15,22)\approx 0.0027\]
+\[\mathbb{P}(Spalte\;2)=h(0|75,15,22)\approx 0.0027\]
+\[...\]
+\[\mathbb{P}(Spalte\;5)=h(0|75,15,22)\approx 0.0027\]
+
+\begin{align*}\mathbb{P}(Spalte\;1-5)&=\mathbb{P}(Spalte\;1)+\mathbb{P}(Spalte\;2)+...+\mathbb{P}(Spalte\;5)=\\
+        &=5\cdot \mathbb{P}(Spalte\;1)\approx 0.0135\end{align*}
+
+\textbf{Aber: wir haben doppelt gezählt}
+
+\textbf{Wir müssen das Additionstheorem verwenden!}\\
+
+\begin{uebsp_theory}
+    Mit dem \reference{Additionstheorem}{Satz}{satz:additionstheorem}  
+    \[\mathbb P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n(-1)^{i-1}S_i\]
+     folgt:
+    \index{Additionstheorem!Beispiel}
+\end{uebsp_theory}
+
+\[\mathbb{P}(S1\cup S2\cup S3\cup S4\cup S5)=\]
+\[\mathbb{P}(S1)+...+\mathbb{P}(S5)-\mathbb{P}(S1\cap S2)-...-\mathbb{P}(S4\cap S5)+\mathbb{P}(S1\cap S2\cap S3)+...+\mathbb{P}(S3\cap S4\cap S5)=\]
+\[\mathbb{P}(S1\cup S2\cup S3\cup S4\cup S5)=5\cdot \mathbb{P}(S)-\binom{5}{2}\mathbb{P}(2S)\approx 0.0135-0.000008\approx 0.0135\]
+
+$\Rightarrow$ Folglich brauchen wir nicht mehr weiterrechnen, das Ergebnis ist genau genug.
+
+$\Rightarrow \mathbb{P}(ges)=5\cdot \mathbb{P}(S)+0\approx 0.0135\approx 1.4\%$
+
+\end{Answer}
+\end{uebsp}

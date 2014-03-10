@@ -1,0 +1,42 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:8.3]
+Bestimmen Sie mithilfe des zentralen Grenzwertsatzes ein approximatives Konfidenzintervall für den Parameter $\theta$ der Exponentialverteilung mit der Dichte
+\[f(x,\theta)=\frac{1}{\theta}e^{-x/\theta}\;\;[x\geq 0]\]
+\end{Exercise}
+\begin{Answer}
+\index{Zentraler Grenzwertsatz!Beispiel}
+\index{Konfidenzintervall!Beispiel}
+Die Stichprobe $X_1,...,X_n$ mit $\hat\theta_n=\overline X_n$:
+
+\begin{uebsp_theory}
+Konfidenzintervall $\mathbb P_\theta(a\leq\theta\leq b)\geq\gamma$\reference{}{Definition}{def:konfidenzintervall}
+Wobei $\gamma$ die Überdeckungswahrscheinlichkeit ist.
+
+Ansatz: $[\overline X_n-c,\overline X_n+c]$
+\end{uebsp_theory}
+\begin{eqnarray*}
+\mathbb{P}_\theta(\overline X_n-c\leq\theta\leq\overline X_n+c)\geq\gamma\\
+\mathbb{P}_\theta(\theta-c\leq\overline X_n\leq\theta+c)\geq\gamma\\
+\mathbb{P}_\theta(-c\leq\overline X_n-\theta\leq+c)\geq\gamma\\
+\mathbb{P}_\theta(-n\cdot c\leq\overline n\cdot X_n-n\cdot\theta\leq+n\cdot c)\geq\gamma\\
+\mathbb{P}_\theta(-n\cdot c\leq \cancel n\cdot \frac{1}{\cancel n}\sum_{i+1}^nx_i-n\cdot\theta\leq+n\cdot c)\geq\gamma\\
+\mathbb{P}_\theta(-n\cdot c\leq \sum_{i+1}^nx_i-n\cdot\theta\leq+n\cdot c)\geq\gamma\\
+\mathbb{P}_\theta(-n\cdot c\leq s_n-n\cdot\theta\leq+n\cdot c)\geq\gamma\\
+\mathbb{P}_\theta(-\frac{n\cdot c}{\sqrt{n\theta^2}}\leq \frac{s_n-n\cdot\theta}{\sqrt{n\theta^2}}\leq+\frac{n\cdot c}{\sqrt{n\theta^2}})\geq\gamma\\
+\end{eqnarray*}
+
+\begin{uebsp_theory}
+Der \reference{Zentrale Grenzwertsatz}{Satz}{satz:zentraler_grenzwertsatz} besagt, dass $\overline X_n=\frac{x_1+x_2+...+x_n}{n}$ für $\lim n\rightarrow\infty$ gegen die Standardnormalverteilung $\mathcal N(0,1)$ konvergiert ($\mu=\mathbb{E}(X)=\theta$ und $\sigma^2=\mathbb{V}(X)=\theta^2$).
+\[X_n\sim\mathcal N(0,1)\]
+\end{uebsp_theory}
+\[\mathbb{P}_\theta(-\frac{n\cdot c}{\sqrt{n\theta^2}}\leq \frac{s_n-n\cdot\theta}{\sqrt{n\theta^2}}\leq+\frac{n\cdot c}{\sqrt{n\theta^2}})\approx\Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)-\Phi\left(-\frac{n\cdot c}{\sqrt{n\theta^2}}\right)=\]
+\[=\Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)-\left(1-\Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)\right)=2\cdot \Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)-1\geq\gamma\]
+\[2\cdot \Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)\geq\gamma+1\Leftrightarrow \Phi\left(\frac{n\cdot c}{\sqrt{n\theta^2}}\right)\geq\frac{\gamma+1}{2}\Leftrightarrow \frac{n\cdot c}{\sqrt{n\theta^2}}\geq\Phi^{-1}\left(\frac{\gamma+1}{2}\right)\]
+\[c\geq\frac{\sqrt{n\theta^2}}{n}\Phi^{-1}\left(\frac{\gamma+1}{2}\right)\Leftrightarrow c\geq\frac{\theta}{\sqrt n}\Phi^{-1}\left(\frac{\gamma+1}{2}\right)\]
+\textbf{Nun wird $\theta$ durch $\hat\theta_n$ angenähert:}
+\[c=\frac{\hat\theta_n}{\sqrt{n}}\Phi^{-1}\left(\frac{\gamma+1}{2}\right)=\frac{\overline X_n}{\sqrt{n}}\Phi^{-1}\left(\frac{\gamma+1}{2}\right)=\frac{\overline X_n}{\sqrt{n}}z_{\frac{\gamma+1}{2}}\]
+
+\textbf{Somit erhalten wir als Konfidenzintervall:}
+\[\left[\overline X_n-\frac{\overline X_n}{\sqrt{n}}z_{\frac{\gamma+1}{2}};\overline X_n+\frac{\overline X_n}{\sqrt{n}}z_{\frac{\gamma+1}{2}}\right]=\left[\overline X_n\left(1-\frac{1}{\sqrt{n}}z_{\frac{\gamma+1}{2}}\right);\overline X_n\left(1+\frac{1}{\sqrt{n}}z_{\frac{\gamma+1}{2}}\right)\right]\]
+\end{Answer}
+\end{uebsp}

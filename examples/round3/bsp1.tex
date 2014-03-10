@@ -1,0 +1,52 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:3.1]
+$X$ und $Y$ seien unabhängig gammaverteilt mit Parametern $(\alpha, \lambda)$ und
+$(\beta, \lambda)$. Zeigen Sie, dass $S = X + Y$ ebenfalls gammaverteilt ist.
+\end{Exercise}
+\begin{Answer}
+z.z. die Reproduktivität von $X$ und $Y$ mit $(\alpha, \lambda)$ und $(\beta, \lambda)\Rightarrow \Gamma_{\alpha,\lambda}*\Gamma_{\beta,\lambda}=\Gamma_{\alpha+\beta,\lambda}$.
+\begin{uebsp_theory}
+    Mit dem \reference{Satz}{Satz}{satz:verteilung_x_y} gilt: (kommt aus \reference{Transformationssatz für Dichten}{Kapitel}{sec:transformationssatz_dichten}\index{Transformationssatz für Dichten!Beispiel}):
+    \[f_{X+Y}(z)=f_X*f_Y(z)=\int_{-\infty}^{\infty} f_X(x)f_Y(z-x)dx.\]
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    und der \reference{Gammaverteilung}{Kapitel}{sec:gammaverteilung} $\Gamma(\alpha, \lambda)$:\index{Gammaverteilung!Beispiel}
+        \[f(x) = \begin{cases} 
+                    \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda\; x} &\mbox{wenn } x \geq 1 \\
+                    0 & \mbox{sonst}
+            \end{cases}\]
+    folgt:
+\end{uebsp_theory}
+
+Einführen der Variable $S=x+y\Rightarrow y=S-x$
+
+\begin{eqnarray*}
+f_{\Gamma_{\alpha,\lambda}*\Gamma_{\beta,\lambda}} &=& \int_0^S f_{\Gamma_{\alpha, \lambda}}(x) \cdot f_{\Gamma_{\beta, \lambda}}(x)dx \\
+ &=& \int_0^S\frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}\cdot e^{-\lambda x}\cdot \frac{\lambda^{\beta}(S-x)^{\beta-1}}{\Gamma(\beta)}e^{-\lambda(S-x)}dx \\
+ &=& \frac{\lambda^{\beta+\alpha}}{\Gamma(\alpha)\Gamma(\beta)} \int_0^S x^{\alpha-1}\cdot \cancel{e^{-\lambda x}}\cdot (S-x)^{\beta-1} e^{-\lambda S} \cancel{e^{\lambda x}}dx\\
+ &=& \frac{\lambda^{\beta+\alpha}}{\Gamma(\alpha)\Gamma(\beta)}\cdot e^{-\lambda S} \int_0^S x^{\alpha-1}\cdot (S-x)^{\beta-1} dx\\
+ &=& \frac{\lambda^{\beta+\alpha}}{\Gamma(\alpha)\Gamma(\beta)}\cdot e^{-\lambda S} \int_0^S \left(\frac{S\cdot x}{S}\right)^{\alpha-1}\cdot \left(S\left(1-\frac{x}{S}\right)\right)^{\beta-1} dx\\
+ &=& \frac{\lambda^{\beta+\alpha}S^{\alpha-1}S^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)}\cdot e^{-\lambda S} \int_0^S \left(\frac{x}{S}\right)^{\alpha-1}\cdot \left(1-\frac{x}{S}\right)^{\beta-1} dx\\
+\end{eqnarray*}
+Anschließend wird $u=\dfrac{x}{S}$ substituiert: $\Rightarrow\dfrac{du}{dx}=\dfrac{1}{S}$\\\\
+Für die Grenze $S$ gilt: $\dfrac{S}{S}=1$, da wir statt $x$ das $S$ einsetzen.
+
+\begin{uebsp_theory}
+Die Betafunktion ist definiert als:
+%TODO: copy this definition to scriptum
+%TODO: don't forget to index as example
+\[\beta(x,y)=\int_0^1t^{x-1}(1-t)^{y-1}dt=\frac{\Gamma(x)\cdot\Gamma(y)}{\Gamma(x+y)}\]
+\end{uebsp_theory}
+
+\begin{eqnarray*}
+f_{\Gamma_{\alpha,\lambda}*\Gamma_{\beta,\lambda}} &=& \frac{\lambda^{\beta+\alpha}S^{\alpha-1}S^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)}\cdot e^{-\lambda S} \int_0^1 u^{\alpha-1}\cdot (1-u)^{\beta-1} du\cdot \frac{1}{S^{-1}}\\
+ &=& \frac{\lambda^{\beta+\alpha}S^{\alpha-1}S^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)}\cdot e^{-\lambda S} \beta(\alpha, \beta)\cdot \frac{1}{S^{-1}}\\
+ &=& \frac{\lambda^{\beta+\alpha}S^{\alpha-1}S^{\beta\cancel{-1}}}{\Gamma(\alpha)\Gamma(\beta)\cancel{S^{-1}}}\cdot e^{-\lambda S} \frac{\Gamma(\alpha)\cdot\Gamma(\beta)}{\Gamma(\alpha+\beta)}\\
+ &=& \frac{\lambda^{\beta+\alpha}S^{\alpha+\beta-1}}{\cancel{\Gamma(\alpha)}\cdot\cancel{\Gamma(\beta)}}\cdot e^{-\lambda S} \frac{\cancel{\Gamma(\alpha)}\cdot\cancel{\Gamma(\beta)}}{\Gamma(\alpha+\beta)}\\
+ &=& \frac{\lambda^{\beta+\alpha}S^{\alpha+\beta-1}}{\Gamma(\alpha+\beta)}\cdot e^{-\lambda S} = f_{\Gamma_{(\alpha+\beta),\lambda}}\\
+f_{\Gamma_{\alpha,\lambda}*\Gamma_{\beta,\lambda}} &=& f_{\Gamma_{(\alpha+\beta),\lambda}}\;\;\fbox{ q.e.d.}\\
+\end{eqnarray*}
+
+\end{Answer}
+\end{uebsp}

@@ -1,0 +1,36 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:3.7]
+Bestimmen Sie die momentenerzeugende Funktion für die Gammaverteilung.
+\end{Exercise}
+\begin{Answer}
+\begin{uebsp_theory}
+    Die \reference{Gammaverteilung}{Kapitel}{sec:gammaverteilung} $\Gamma(\alpha, \lambda)$:\index{Gammaverteilung!Beispiel} ist wie folgt definiert:
+        \[f(x) = \begin{cases}
+                    \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda\; x} &\mbox{wenn } x \geq 1 \\
+                    0 & \mbox{sonst}
+            \end{cases}\]
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Die momentenerzeugende Funktion ist wie folgt definiert:
+        %TODO: add to scriptum
+        %TODO: add to index
+        \[M_X(t)=\mathbb{E}(e^{Xt})=\int_{-\infty}^{\infty}e^{xt}f(x)dx\]
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+Die Gammafunktion ist definiert als:
+%TODO: copy this definition to scriptum
+%TODO: don't forget to index as example
+\[\Gamma(x)=\int_0^\infty x^{t-1}e^{-x}dx=(z-1)\Gamma(z-1)\]
+\end{uebsp_theory}
+
+\begin{eqnarray*}
+M_X(t) &=& \mathbb{E}(e^{xt})=\int_0^\infty e^{xt}\frac{\lambda^\alpha\cdot x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda x}dx=\frac{\lambda^\alpha}{\Gamma(\alpha)}\int_0^\infty e^{x(t-\lambda)}x^{\alpha-1}dx\\
+ &=& \frac{\lambda^\alpha}{\Gamma(\alpha)}\int_0^\infty e^{-x(\lambda-t)}x^{\alpha-1}dx\;\;\fbox{\parbox[c][2em][c]{0.4\textwidth}{Substituiere: $u=x(\lambda-t)$, \\$\frac{du}{dx}=\lambda-t\;\Rightarrow\;dx=\frac{du}{\lambda-t}$}}\\
+ &=& \frac{\lambda^\alpha}{\Gamma(\alpha)}\int_0^\infty e^{-u}\left(\frac{u}{\lambda-t}\right)^{\alpha-1}\frac{du}{\lambda-t} = \frac{\lambda^\alpha}{\Gamma(\alpha)}\cdot \frac{1}{(\lambda-t)^\alpha}\int_0^\infty e^{-u}u^{\alpha-1}du\\
+M_{X}(t) &=& \frac{\lambda^\alpha}{\cancel{\Gamma(\alpha)}}\cdot \frac{\cancel{\Gamma(\alpha)}}{(\lambda-t)^\alpha}=\frac{\lambda^\alpha}{(\lambda-t)^\alpha}
+\end{eqnarray*}
+
+\end{Answer}
+\end{uebsp}

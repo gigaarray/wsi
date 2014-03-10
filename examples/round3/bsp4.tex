@@ -1,0 +1,64 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:3.4]
+Bestimmen Sie Erwartungswert und Varianz der geometrischen Verteilung.
+\end{Exercise}
+\begin{Answer}
+    \begin{enumerate}[i)]
+        \item Erwartungswert:
+            \begin{uebsp_theory}
+                Der \reference{Erwartungswert für diskrete Zufallsvariablen}{Kapitel}{sec:erwartungswert} ist mit \index{Erwartungswert!Beispiel}
+                    \[\mathbb E(X)=\sum_x xp_X(x)\]
+                definiert
+            \end{uebsp_theory}
+            \begin{uebsp_theory}
+                Die \reference{Geometrische Verteilung}{Kapitel}{sec:geometrische_verteilung} $\mathcal G(p)$: \index{Geometrische Verteilung!Beispiel}
+                    \[f(x) = \begin{cases} 
+                                p(1-p)^x &\mbox{wenn } 0\leq x \\
+                                0 & \mbox{sonst}
+                \end{cases}\]
+            \end{uebsp_theory}
+            \begin{uebsp_theory}
+                Die geometrische Reihe:
+                \[\sum_{i=0}^\infty i\cdot q^i=\frac{q}{(1-q)^2}\;\;\;\;\forall |q|<1\]
+                %TODO: copy this definition to scriptum
+                %TODO: don't forget to index as example
+            \end{uebsp_theory}
+            In Form $\sum x\cdot \alpha^x$ (die der Geometrischen Reihe) bringen:\\
+            \begin{eqnarray*}
+                \mathbb{E}(X) &=& \sum_{x=1}^{\infty}x\cdot p(1-p)^{x-1}=p\cdot \sum_{x=1}^{\infty}x\cdot (1-p)^{x-1}=\frac{p}{1-p}\sum_{x=1}^{\infty}x\cdot (1-p)^x \\
+                 &=& \frac{p}{1-p}\sum_{x=1}^{\infty}x\cdot (1-p)^x = \frac{p}{1-p}\cdot\frac{1-p}{(1-(1-p))^2}=\frac{p}{\cancel{1-p}}\cdot\frac{\cancel{1-p}}{(1-1+p)^2}=\\
+                \mathbb{E}(X) &=&\frac{p}{p^2}=\frac{1}{p} = \frac{1}{p}
+            \end{eqnarray*}
+        \item Varianz:
+            \begin{uebsp_theory}
+                Die \reference{Varianz}{Kapitel}{sec:varianz} ist mit \index{Varianz!Beispiel}
+                \[\mathbb V(X)=\mathbb E((X-\mathbb E(x))^2)=\mathbb E(X^2)-(\mathbb E(x))^2)\]
+                definiert.
+                %TODO: 2.te herleitung mittels verschiebungssatz ins scriptum evtl. aufnehmen.
+            \end{uebsp_theory}
+            \begin{eqnarray*}
+                \mathbb V(X)&=&\mathbb E(X^2)-(\mathbb E(x))^2)
+            \end{eqnarray*}
+
+            mit $\mathbb{E}(X)^2=\frac{1}{p^2}$ ist der eine Teil bereits bekannt. Der 2. Teil $\mathbb{E}(X^2)$ ist gesucht:
+
+            \begin{uebsp_theory}
+                Sonderform der geometrischen Reihe:
+                \[\sum_{i=0}^\infty i^2\cdot q^i=\frac{q(1+q)}{(1-q)^3}\;\;\;\;\forall |q|<1\]
+                %TODO: copy this definition to scriptum
+                %TODO: don't forget to index as example
+            \end{uebsp_theory}
+
+            Wir versuchen, $\mathbb{E}(X^2)$ in die Form $\sum x^2\cdot \alpha^x$ (Sonderform der Geometrischen Reihe) zu bringen.
+
+            \begin{eqnarray*}
+                \mathbb{E}(X^2) &=& \sum_{x=1}^{\infty}x^2\cdot p(1-p)^{x-1}=p\sum_{x=1}^{\infty}x^2\cdot (1-p)^{x-1}=\frac{p}{1-p}\sum_{x=1}^{\infty}x^2\cdot (1-p)^{x} \\
+                \mathbb{E}(X^2) &=& \frac{p}{1-p}\sum_{x=1}^{\infty}x^2\cdot (1-p)^{x} = \frac{p}{\cancel{1-p}}\frac{\cancel{(1-p)}(1+1-p)}{(1-(1-p))^3}=\frac{p\,(2-p)}{p^3}=\frac{2-p}{p^2}
+            \end{eqnarray*}
+
+            \begin{eqnarray*}
+                \mathbb V(X)&=&\mathbb E(X^2)-(\mathbb E(x))^2) = \frac{2-p}{p^2}-\frac{1}{p^2}=\frac{1-p}{p^2}
+            \end{eqnarray*}
+    \end{enumerate}
+\end{Answer}
+\end{uebsp}

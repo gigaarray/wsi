@@ -1,0 +1,46 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:9.2]
+Gegeben sei folgende Stichprobe:
+\[1.5\;2.1\;1.3\;1.7\;2.2\;1.1\;1.9\;0.9\;1.4\;1.6\]
+\[1.8\;1.7\;2.3\;1.8\;1.6\;2.0\;1.7\;2.1\;1.8\;1.7\]
+einer Normalverteilung. Testen Sie $H_0:\mu_0=1.5$ gegen die zweiseitige Alternative.
+\end{Exercise}
+\begin{Answer}
+\index{Normalverteilung!Beispiel}
+\index{Spezielle Tests!Beispiel}
+\index{Korrigierte Stichprobenvarianz!Beispiel}
+\index{zweiseitige Hypothese!Beispiel}
+\index{Tests!für $\mu$, $\sigma^2$ unbekannt von $\mathcal N$!Beispiel}
+\begin{uebsp_theory}
+Folgende Überlegung liegt zu Grunde:\\
+Liegt der vorgegebene Wert $\mu_0$ nahe dem Mittelwert der Stichprobe, dann liegt der vorgegebene Wert auch nahe dem Mittelwert der Grundgesamtheit.
+$\Rightarrow$ Nullhypothese annehmen, sonst:$\Rightarrow$ Nullhypothese ablehnen.
+\end{uebsp_theory}
+Somit lautet die Nullhypothese $H_0:\mu=\mu_0$ und die Alternativhypothese $H_1:y\neq \mu_0$.
+\begin{enumerate}[i)]
+\item \textbf{Berechnung des Mittelwertes:}
+\[\overline x_n=\frac{1}{n}\sum_{i=1}^nx_i=\frac{1}{20}\sum_{i=1}^{20}x_i=\frac{34.2}{20}=1.71\]
+\item \textbf{Test für den Mittelwert:}
+\begin{uebsp_theory}
+\reference{Test für den Mittelwert $\mu$ der Grundgesamtheit (für Normalverteilung, wenn $\sigma^2$ unbekannt)}{Kapitel}{sec:spezielle_tests}
+\[T=\frac{\overline x_n-\mu_0}{\sqrt{S_n^2/n}}\]
+Für $H_0:\mu =\mu_0$ gegen $H_1:\mu\neq\mu_0$:
+    verwerfen $H_0$, wenn $|T|>t_{n-1;1-\frac{\alpha}{2}}$
+
+Wobei $S_n^2$ definiert ist, als die \reference{korrigierte Stichprobenvarianz}{Definition}{def:korrigierte_stichprobenvarianz}:
+\[s_n^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline x)^2\]
+\end{uebsp_theory}
+\[T=\frac{1.71-1.5}{\sqrt{s_n^2}}\sqrt{20}\]
+\begin{eqnarray*}
+s_n^2&=&\frac{1}{19}\sum_{i=1}^{20}(x_i-1.71)^2=\frac{1}{19}((1.5-1.71)^2+(2.1-1.71)^2+...+(1.7-1.71)^2)\\
+s_n^2&=&\frac{2.398}{19}\approx0.1262
+\end{eqnarray*}
+\[T=\frac{0.21\sqrt{20}\sqrt{19}}{\sqrt{2.398}}=\sqrt{\frac{0.0441\cdot 20\cdot 19}{2.398}}=\sqrt{6.9883}=2.64354\]
+\item \textbf{$t_{n-1,1-\alpha/2}$ aus der Tabelle bestimmen:}
+Für \reference{Signifikanzniveau}{Definition}{def:signifikanzniveau} $\alpha=0.5$:
+\[t_{20-1,1-5/2}=t_{19,0.975}=2.093\;\leftarrow\framebox{aus \reference{Tabelle}{Anhang}{sec:quantile_t_verteilung}}\]
+\item \textbf{Ungleichung lösen}
+\[2.64354=T>t_{19,0.975}=2.093\;\Rightarrow\;\framebox{verwerfen $H_0$}\]
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

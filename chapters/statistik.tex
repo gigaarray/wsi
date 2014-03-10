@@ -201,6 +201,12 @@ Da die Normalverteilung 2 Parameter ($\mu$ und $\sigma$) besitzt, ist unser $k=2
 \[\Rightarrow \hat\sigma^2=\hat\theta_2+(\hat\theta_1)^2=\frac{1}{n}\sum_{i=1}^nx_i^2+{\underbrace{\left(\frac{1}{n}\sum_{i=1}^nx_i\right)}_{\overline{x_n}}}^2=\frac{1}{n}\sum_{i=1}^nx_i^2+\overline{x_n}^2\]
 \end{bsp}
 
+\ifdefined\uebsps
+\newExercPage
+\setcounter{Exercise}{5}
+\input{examples/round7/bsp6}
+\index{Momentenmethode|)}
+\fi
 
 \subsubsection{Maximum Likelihood Methode}\index{Maximum Likelihood Methode|(}
 Eine andere Methode um Schätzer zu konstruieren, ist die Maximum Likelihood Methode:
@@ -351,6 +357,12 @@ Das ist auch genau das, was man erwartet, wenn in einer Stichprobe mit dem Umfan
     \[\hat \mu=\overline y\text{ und }\hat \sigma=\sqrt{\mathbb{V}(y)}\]
 \end{bsp}
 
+\ifdefined\uebsps
+\input{examples/round7/bsp7}
+\newExercPage
+\input{examples/round8/bsp1}
+\input{examples/round8/bsp2}
+\fi
 
 \index{Maximum Likelihood Methode|)}
 
@@ -535,6 +547,9 @@ wobei $\sigma_n^2$ die Varianz von $\hat\theta_n$ ist.
 Diese hängt in den meisten Fällen vom unbekannten $\theta$ ab, das wir
 durch $\hat\theta_n$ ersetzen.
 
+\ifdefined\uebsps
+\input{examples/round8/bsp3}
+\fi
 
 Für den Spezialfall einer Normalverteilung können wir exakte
 Konfidenzintervalle angeben:
@@ -573,6 +588,9 @@ hier gibt es 2 Möglichkeiten:
 \mathbb{P}\left(-c\leq\underbrace{\frac{\overline X_n-\mu}{\sqrt{S_n^2/n}}}_{=T}\leq c\right)\]
 Gesucht ist nun die Verteilung, von $T=\frac{\overline X_n-\mu}{\sqrt{S_n^2/n}}$
 
+\ifdefined\uebsps
+\input{examples/round8/bsp4}
+\fi
 %TODO: dieses subsubsection ist ein einzier scheißdreck. (Siehe Skriptum ws13 vom 6.12., bzw. ws12: 14.12.) wie man von da weiter kommt weiß ich jetzt nicht, ich geh mal da weiter, so weit ich mich auskenne.
 \begin{definition} Students-T-Verteilung\\\index{Student-T-Verteilung}\index{T-Verteilung, Students-|see{Student-T-Verteilung}}
 Wenn $U\sim\mathcal{N}(0,1)$ und $V\sim\chi_n^2$ verteilt sind, dann heißt die Verteilung von 
@@ -821,6 +839,10 @@ Für den randomisierten Likelihoodquotiententes gilt somit:
 Für einfache Hypothesen ist der randomisierte Likelihoodquotiententest optimal.
 \end{satz}
 
+\ifdefined\uebsps
+\newExercPage
+\input{examples/round9/bsp1}
+\fi
 
 \begin{definition}
 Die \textbf{Likelihoodquotientenstatistik} für zusammengesetzte Hypothesen\index{Likelihoodquotientenstatistik|see{Likelihoodquotiententest}}\index{Likelihoodquotiententest}\index{Test!Likelihoodquotienten-|see{Likelihoodquotiententest}} ist
@@ -938,6 +960,10 @@ Wir behaupten jetzt, dass der wahre Mittelwert $\mu$ der Melonen der Obstverkäu
     verwerfen $H_0$, wenn $|T|>z_{1-\frac{\alpha}{2}}$.
 \end{enumerate}
 
+\ifdefined\uebsps
+\input{examples/round9/bsp2}
+\input{examples/round9/bsp3}
+\fi
 
 \subsection{Anpassungstests}\index{Tests!Anpassungs-|see{Anpassungstests}}\index{Anpassungstests|(}
 Ein Anpassungstest ist ein Hypothesentest, der die unbekannte Wahrscheinlichkeitsverteilung einer Zufallsvariablen auf (annäherndes) Folgen eines Verteilungsmodells prüfen soll.
@@ -1157,6 +1183,9 @@ Somit wird die Nullhypothese nicht verworfen und die Messwerte sind wohl \\$\mat
 \end{table}
 }
 
+\ifdefined\uebsps
+\input{examples/round9/bsp4}
+\fi
 \index{Anpassungstests|)}
 \subsection{Tests und Konfidenzintervalle}\index{Konfidenzintervall!Tests}
 Es gibt einen interessanten Zusammenhang zwischen Tests und Konfidenzintervallen:

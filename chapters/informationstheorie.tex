@@ -134,6 +134,11 @@ Fragen, um den gesamten Block zu erraten, mit $nH(P)+1$
 abschätzen, pro Element ergibt das $H(P)+1/n$, was beliebig nahe an
 die Entropie herankommt.
 
+\ifdefined\uebsps
+\newExercPage
+\input{examples/round10/bsp1}
+\input{examples/round10/bsp2}
+\fi
 
 \subsection{Bedingte Entropie und die Kullback-Leibler Divergenz}
 Wenn $X$ und $Y$ zwei Zufallsvariable sind, können wir $(X,Y)$
@@ -226,6 +231,10 @@ falls die Verteilungen $P$ und $Q$ identisch sind.
 %maximale Entropie.
 %\end{definition}
 
+\ifdefined\uebsps
+\input{examples/round10/bsp6}
+\input{examples/round11/bsp2}
+\fi
 
 \index{Information und Entropie|)}
 
@@ -313,6 +322,9 @@ Es ist nicht schwer
 einzusehen, dass dadurch ein präfixfreier Code definiert wird, der
 Shannon-Code. 
 Anschaulich lässt sich das Verfahren an einem Beispiel darstellen:
+\ifdefined\uebsps
+\input{examples/round10/bsp3}
+\fi
 
 \subsection{Der Fanu-Code}\index{Fanu-Code}
 Der einzige Schönheitsfehler dabei ist, dass die Wahrscheinlichkeiten geordnet werden müssen. \\
@@ -322,7 +334,9 @@ Hier verwendet man dieselben Notationen wie beim Shannon-Code,
 nur codiert man
 $\frac{(f_{i-1}+f_i)}{2}$ mit diesmal $\lceil \log_2(\frac{1}{p_i})\rceil+1$ Bits.\\
 Wieder mit einem Beispiel:\\
-
+\ifdefined\uebsps
+\input{examples/round10/bsp4}
+\fi
 \subsection{Weitere Codierungsverfahren}
 Diese Idee kann man auf das Codieren von ganzen Blöcken anwenden, im
 Extremfall wird die ganze Nachricht als einzelner Block kodiert. Im 
@@ -363,6 +377,9 @@ mit derselben mittleren Codewortlänge) gibt.
 
 (universelle Codes)
 
+\ifdefined\uebsps
+\input{examples/round10/bsp5}
+\fi
 \index{Codes|)}
 
 \section{Informationsquellen}\index{Informationsquellen|(}
@@ -407,6 +424,9 @@ Das kann man so sehen, dass mit hoher Wahrscheinlichkeit gilt, dass die
 Wahrscheinlichkeit, genau die Folge $(X_1,\dots,X_n)$ zu ziehen
 $\approx 2^{-nH(\mathcal X)}$ ist.
 
+\ifdefined\uebsps
+\input{examples/round11/bsp1}
+\fi
 \index{Informationsquellen|)}
 \section{Blockcodes}
 \section{Kanalcodierung}

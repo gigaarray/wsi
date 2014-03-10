@@ -1,0 +1,34 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.3]
+$X$ und $Y$ seien unabhängig poissonverteilt mit Parameter $\lambda$ und $\mu$. Bestimmen Sie die Verteilung von $X + Y$.
+\end{Exercise}
+\begin{Answer}
+    \index{Poissonverteilung!Beispiel}
+    \index{Unabhängigkeit!Verteilung!Beispiel}
+    \index{Faltung von Dichten!Beispiel}
+\begin{uebsp_theory}
+    Die Wahrscheinlichkeitsfunktion der \reference{Poissonverteilung}{Kapitel}{sec:poissonverteilung} ist wie folgt definiert:
+    \[{\lambda^xe^{-\lambda}\over x!}\]
+    Für zwei \reference{unabhängigie Zufallsvariablen $(X,Y)$}{Definition}{def:unabhaengigkeit_verteilung} gilt: 
+    \[p(x)=F_{X,Y}(x,y)=F_{X}(x)\cdot F_Y(y).\]
+
+    Außerdem gilt, für \reference{die gemeinsame Dichte}{Satz}{satz:faltung_dichten}: 
+    \[f_{x+y}=\underbrace{f_X*f_Y(z)}_{\text{Faltung}}=\int_{-\infty}^{\infty}f_X(x)\cdot f_Y(z-x)dx\]
+\end{uebsp_theory}
+
+Aus der Angabe wissen wir also:
+\[p(x) = {\lambda^xe^{-\lambda}\over x!}\text{ und }p(y) = {\mu^ye^{-\mu}\over y!}\]
+Wir führen eine neue Variable ein: $Z=X+Y \Rightarrow Y=Z-X$ \\
+
+$\mathbb{P}(Z=z)=\mathbb{P}(X+Y=z)=\sum_x\mathbb{P}(X=x,Y=z-x)$\\ \\
+Da die Varaiblen unabhängig sind ergibt das: \\ $\sum_{x}\mathbb{P}(X=x,Y=z-x)=\sum_{x}[p(x)p(z-x)] \text{ was der Faltung entspricht.}$\\ 
+
+$=\sum_{x=0}^{z}{\lambda^xe^{-\lambda}\over x!}\cdot{\mu^{(z-x)}e^{-\mu}\over (z-x)!}=e^{-\lambda-\mu} \cdot  \sum_{x=0}^{z} \frac{1}{x! \cdot (z-x)!} \cdot \lambda^{z} \cdot  \mu^{z-x} = e^{-\lambda-\mu} \cdot \sum_{x=0}^{z}  \cdot {z \choose x} \cdot \frac{1}{z!} \cdot \lambda^{z} \cdot  \mu^{z-x} = \frac{e^{-\lambda-\mu}}{z!}\sum_{x=0}^{z} {z \choose x} \cdot  \lambda^{z} \cdot  \mu^{z-x} = \frac{e^{-\lambda-\mu}}{z!}\sum_{x=0}^{z}  {z \choose x} \cdot \lambda^{z} \cdot  \mu^{z-x}$ 
+\\ \\
+Mit Hilfe des \reference{Binomischen Lehrsatzes}{Anhang}{sec:binom_lehrsatz} $(a+b)^n=\sum_{k=0}^n~{n\choose k} \cdot a^{n-k} \cdot b^k$ lässt sich dies weiter vereinfachen zu: \\ \\
+$p(z) = \frac{(\lambda +\mu)^{z} \cdot e^{-(\lambda+\mu)}}{z!}$\\
+
+Dies entspricht wiederum einer Poisson-Verteilung von Z.
+
+\end{Answer}
+\end{uebsp}

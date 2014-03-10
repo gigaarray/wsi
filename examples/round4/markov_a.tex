@@ -1,0 +1,53 @@
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=0.95cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=blue!30,draw=none,text=white,minimum size=0.35cm]
+
+  \node[state]              (0)                                         {};
+  \node[state]              (1)      [right of=0]                       {};
+  \node[state]              (2)      [right of=1]                       {};
+  \node[state, fill=none]   (3)      [right of=2]                       {};
+  \node[state, fill=none]   (a-2)    [right of=3, node distance=0.8cm]  {};
+  \node[state]              (a-1)    [right of=a-2]                     {};
+  \node[state]              (a)      [right of=a-1]                     {};
+  \node[state]              (a+1)    [right of=a]                       {};
+  \node[state, fill=none]   (a+2)    [right of=a+1]                     {};
+  \node[state, fill=none]   (a+b-3)  [right of=a+2, node distance=0.8cm]{};
+  \node[state]              (a+b-2)  [right of=a+b-3]                   {};
+  \node[state]              (a+b-1)  [right of=a+b-2]                   {};
+  \node[state]              (a+b)    [right of=a+b-1]                   {};
+
+  \node (desc0) [below of=0,node distance=1.6cm, align=center] {Zustand 0\\Absorbierend};
+  \node (desca+b) [below of=a+b,node distance=1.6cm, align=center] {Zustand a+b\\Absorbierend};
+  \node (desca) [below of=a,node distance=1.6cm, align=center] {Zustand a\\Start};
+
+  \path (0) edge [loop above]   node {$1$} (0)
+        (1) edge                node [above]{$\frac{1}{2}$} (0)
+            edge [bend right]   node [below]{$\frac{1}{2}$} (2)
+        (2) edge [bend right]   node [above]{$\frac{1}{2}$} (1)
+            edge [bend right]   node [below]{$\frac{1}{2}$} (3)
+        (3) edge [bend right]   node [above]{$\frac{1}{2}$} (2);
+
+  \path (a+b)   edge [loop above]   node {$1$} (a+b)
+        (a+b-1) edge                node [below]{$\frac{1}{2}$} (a+b)
+                edge [bend right]   node [above]{$\frac{1}{2}$} (a+b-2)
+        (a+b-2) edge [bend right]   node [below]{$\frac{1}{2}$} (a+b-1)
+                edge [bend right]   node [above]{$\frac{1}{2}$} (a+b-3)
+        (a+b-3) edge [bend right]   node [below]{$\frac{1}{2}$} (a+b-2);
+
+  \path (a-2)   edge [bend right]   node [below]{$\frac{1}{2}$} (a-1)
+        (a-1)   edge [bend right]   node [above]{$\frac{1}{2}$} (a-2)
+                edge [bend right]   node [below]{$\frac{1}{2}$} (a)
+        (a)     edge [bend right]   node [above]{$\frac{1}{2}$} (a-1)
+                edge [bend right]   node [below]{$\frac{1}{2}$} (a+1)
+        (a+1)   edge [bend right]   node [above]{$\frac{1}{2}$} (a)
+                edge [bend right]   node [below]{$\frac{1}{2}$} (a+2)
+        (a+2)   edge [bend right]   node [above]{$\frac{1}{2}$} (a+1);
+
+  \path [draw, dotted, -] (3) -- (a-2)
+                          (a+2) -- (a+b-3);
+
+  \path [draw, dashed, ->] (desc0) -- (0);
+  \path [draw, dashed, ->] (desca+b) -- (a+b);
+  \path [draw, dashed, ->] (desca) -- (a);
+
+\end{tikzpicture}

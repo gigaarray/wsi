@@ -1,0 +1,182 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+%\documentclass[a4paper]{article}
+%\usepackage[ascii]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[english,ngerman]{babel}
+%\usepackage{amsmath}
+%\usepackage{amssymb,amsfonts,textcomp}
+%\usepackage{color}
+%\usepackage{array}
+%\usepackage{hhline}
+%\usepackage{hyperref}
+%\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+% Text styles
+%\newcommand\textstyleAbsatzStandardschriftart[1]{#1}
+% Page layout (geometry)
+%\setlength\voffset{-1in}
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%\setlength\textheight{23.698002cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{0.751cm}
+%%\setlength\headheight{1.251cm}
+%\setlength\headsep{0cm}
+% Footnote rule
+%\setlength{\skip\footins}{0.119cm}
+%\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+%\makeatletter
+%\newcommand\ps@MP{
+%  \renewcommand\@oddhead{\"Ubung 5\hfill \hfill 27.11.2013}
+%  \renewcommand\@evenhead{\@oddhead}
+%  \renewcommand\@oddfoot{Wahrscheinlichkeitsrechnung\hfill Markus Kessler\hfill Seite %\textstyleAbsatzStandardschriftart{\textbf{\thepage{}}} von %\textstyleAbsatzStandardschriftart{\textbf{?}} \textstyleAbsatzStandardschriftart{und %stochastische Prozesse}}
+%  \renewcommand\@evenfoot{\@oddfoot}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\newcommand\ps@Standard{
+%  \renewcommand\@oddhead{}
+%  \renewcommand\@evenhead{}
+%  \renewcommand\@oddfoot{}
+%  \renewcommand\@evenfoot{}
+%  \renewcommand\thepage{\arabic{page}}
+%}
+%\makeatother
+%\pagestyle{Standard}
+%\newcommand\normalsubformula[1]{\text{\mathversion{normal}$#1$}}
+%\title{}
+%\author{}
+%\date{2014-02-25T11:40:19.646000000}
+%\begin{document}
+%\clearpage\clearpage\setcounter{page}{1}\pagestyle{MP}
+{
+\begin{uebsp}
+\newcommand\textstyleAbsatzStandardschriftart[1]{#1}
+\newcommand\normalsubformula[1]{\text{\mathversion{normal}$#1$}}
+
+
+%\bigskip
+
+\begin{Exercise}
+{\selectlanguage{ngerman}\bfseries
+Die Markovkette 
+$\normalsubformula{\text{X}}_{\normalsubformula{\text{t}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{mit Zustandsraum }
+$\left(\normalsubformula{\text{0}},\ldots
+,\normalsubformula{\text{N}}\right)\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{hat die
+\"Ubergangswahrscheinlichkeiten }\newline
+\index{"Ubergangswahrscheinlichkeit@Übergangswahrscheinlichkeit!Beispiel}
+\index{R"uckkehrzeit@Rückkehrzeit!Beispiel}
+
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{i}},\normalsubformula{\text{i}}+\normalsubformula{\text{1}}}=\normalsubformula{\text{p}}_{\normalsubformula{\text{i}}},\normalsubformula{\text{~}}\normalsubformula{\text{p}}_{\normalsubformula{\text{i}},\normalsubformula{\text{0}}}=\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{mit }
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{N}}}=\normalsubformula{\text{0}}\text{.}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{Bestimmen Sie die Verteilung der
+R\"uckkehrzeit } $\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{nach 0. Wie muss man die }
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{w\"ahlen, damit }
+$\normalsubformula{\text{t}}_{\normalsubformula{\text{i}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{auf }
+$\left(\normalsubformula{\text{1}},\ldots
+,\normalsubformula{\text{N}}+\normalsubformula{\text{1}}\right)\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{gleichverteilt ist?}}
+\end{Exercise}
+
+\begin{Answer}
+{\selectlanguage{ngerman}
+Skizze}
+
+{\selectlanguage{ngerman}
+Die R\"uckkehrwahrscheinlichkeiten sind definiert mit:}
+
+{\centering 
+$\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{1}}\right)=\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{o}}}\right)$\newline
+ $\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{2}}\right)=\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}\right)$\newline
+ $\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{3}}\right)=\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}})$\par}
+
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{Zur
+Erkl\"arung: f\"ur }} $\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{3}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{springe
+ich nach drei Schritten zur\"uck zum Anfang. Daf\"ur kann ich nur den
+Weg \"uber }}
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}},\normalsubformula{\text{~}}{\normalsubformula{\text{~}}\normalsubformula{\text{p}}}_{\normalsubformula{\text{1}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{und }}
+$\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}}\right)\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{gehen.}}
+
+\begin{equation*}
+\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{k}}\right)=\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}\ldots
+\normalsubformula{\text{P}}_{\normalsubformula{\text{k}}-\normalsubformula{\text{2}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{k}}-\normalsubformula{\text{1}}}\right)\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{~}}\normalsubformula{\text{k}}\in
+[\normalsubformula{\text{1}},\normalsubformula{\text{N}}+\normalsubformula{\text{1}}]
+\end{equation*}
+{\selectlanguage{ngerman}
+Damit eine Gleichverteilung vorhanden ist, muss jede R\"uckkehrzeit
+gleich wahrscheinlich sein.}
+
+\begin{equation*}
+\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{1}}\right)=\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{2}}\right)=\ldots
+=\normalsubformula{\text{P}}\left(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{k}}\right)=\ldots
+=\normalsubformula{\text{P}}(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{N}}+\normalsubformula{\text{1}})=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}
+\end{equation*}
+{\selectlanguage{ngerman}
+Wir k\"onnen rekursiv beginnen:}
+
+\begin{equation*}
+\normalsubformula{\text{P}}(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{1}})
+\end{equation*}
+{\centering 
+$\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\right)=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\newline
+
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{1}}-\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}=\frac{\normalsubformula{\text{N}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\par}
+
+\begin{equation*}
+\normalsubformula{\text{P}}(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{2}})
+\end{equation*}
+{\centering 
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}\right)=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\newline
+
+$\frac{\normalsubformula{\text{N}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}\right)=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\newline
+
+$\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}$\newline
+
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}=\normalsubformula{\text{1}}-\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}=\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}$\par}
+
+\begin{equation*}
+\normalsubformula{\text{P}}(\normalsubformula{\text{$\tau
+$}}_{\normalsubformula{\text{0}}}=\normalsubformula{\text{3}})
+\end{equation*}
+{\centering 
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{0}}}\normalsubformula{\text{p}}_{\normalsubformula{\text{1}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}}\right)=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\newline
+
+$\frac{\normalsubformula{\text{N}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}}\left(\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}}\right)=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}+\normalsubformula{\text{1}}}$\newline
+
+$\normalsubformula{\text{1}}-\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}}=\frac{\left(\normalsubformula{\text{N}}+\normalsubformula{\text{1}}\right)\normalsubformula{\text{N}}}{\left(\normalsubformula{\text{N}}+\normalsubformula{\text{1}}\right)\normalsubformula{\text{N}}\left(\normalsubformula{\text{N}}-\normalsubformula{\text{1}}\right)}=\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}$\newline
+
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{2}}}=\normalsubformula{\text{1}}-\frac{\normalsubformula{\text{1}}}{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}=\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{2}}}{\normalsubformula{\text{N}}-\normalsubformula{\text{1}}}$\par}
+
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{F\"ur }}
+$\normalsubformula{\text{p}}_{\normalsubformula{\text{k}}}\normalsubformula{\text{~}}$
+\textstyleAbsatzStandardschriftart{\foreignlanguage{ngerman}{l\"asst
+sich definieren:}}
+
+\begin{equation*}
+\normalsubformula{\text{p}}_{\normalsubformula{\text{k}}}=\frac{\normalsubformula{\text{N}}-\normalsubformula{\text{k}}}{\normalsubformula{\text{N}}-\normalsubformula{\text{k}}+\normalsubformula{\text{1}}}
+\end{equation*}
+\end{Answer}
+\end{uebsp}
+}

@@ -1,0 +1,79 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:3.6]
+Wie oft muss man Würfeln, damit die Wahrscheinlichkeit dafür, dass die Anzahl der Sechsen mindestens 100 beträgt, mindestens 0.9 ist?
+\end{Exercise}
+\begin{Answer}
+\begin{uebsp_theory}
+    Die \reference{Binomialverteilung $\mathcal B_n(p)$}{Kapitel}{sec:binomialverteilung}\index{Binomialverteilung!Beispiel}, wie folgt def.:
+        \[f(x) = \begin{cases} 
+                    \binom{n}{x}p^x(1-p)^{n-x} &\mbox{wenn } 0\leq x\leq n \\
+                    0 & \mbox{sonst}
+    \end{cases}\]\\
+    Der Erwartungswert $\mathbb{E}(X)=n\cdot p$ und die Varianz $\mathbb{V}(X)=\sigma^2=n\cdot p\cdot (1-p)$.
+\end{uebsp_theory}
+
+    Da die Binomialverteilung jedoch schwer zu berechnen ist $\Rightarrow$ Approximation mit der Standardnormalverteilung.
+
+\begin{uebsp_theory}
+    Die Dichte der \reference{Normalverteilung $\mathcal N(\mu,\sigma^2)$}{Kapitel}{sec:normalverteilung}\index{Normalverteilung!Beispiel}, wie folgt def.:
+        \[f(x) = {1\over\sqrt{2\pi\sigma^2}}\exp\left(-{(x-\mu)^2\over 2\sigma^2}\right)\]\\
+    Die Verteilungsfunktion der Normalverteilung $N(\mu,\sigma^2)$, wie folgt def.:
+    %TODO: add to scriptum
+        \[F(x) = \int_{-\infty}^x{1\over{\sqrt{2\pi\sigma^2}}}\exp\left(-\frac{(t-\mu)^2}{2\sigma^2}\right)dt\]
+    Der Erwartungswert $\mathbb{E}(X)=\mu$ und die Varianz $\mathbb{V}(X)=\sigma^2$.
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    %TODO: add to scriptum
+    %TODO: add to index
+    Die Dichte der Standardnormalverteilung $N(0,1)$, wie folgt def.:
+        \[\varphi(x) ={1\over\sqrt{2\pi}}\exp\left(-{x^2\over 2}\right)\]
+    Die Verteilungsfunktion der Standardnormalverteilung $N(0,1)$, wie folgt def.:
+        \[\Phi(x) = \int_{-\infty}^x{1\over\sqrt{2\pi}}\exp\left(-{t^2\over 2}\right)dt\]
+    Der Erwartungswert $\mathbb{E}(X)=0$ und die Varianz $\mathbb{V}(X)=1$.
+
+    $\Rightarrow$ Transformation zur Normalverteilung: $F(x)=\Phi\left(\frac{x-\mu}{\sigma}\right)$
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Die Approximation der Binomialverteilung durch die Normalverteilung \index{Binomialverteilung-Approximation!Beispiel}, wie folgt def.:
+    Satz von Moivre-Laplace: $B(n,p)\approx N(np,np(1-p))$, wenn $np(1-p)\geq9$
+        %TODO: add to scriptum,
+        %TODO: add to index
+        \[B(n,p)\approx N(np,np(1-p))\approx\Phi\left(\frac{x-np}{\sqrt{n\cdot p\cdot(1-p)}}\right)\]
+    Der Erwartungswert $\mathbb{E}(X)=\mu=np$ und die Varianz $\mathbb{V}(X)=\sigma^2=np(1-p)$.
+\end{uebsp_theory}
+Die Wahrscheinlichkeit, dass ein 6-er bei einem Wurf gewürfelt wird: $p=\frac{1}{6}$
+
+Der Erwartungswert beträgt somit: $\mathbb{E}(X)=\mu=np=\frac{n}{6}$
+
+Die Varianz beträgt somit: $\mathbb{V}(X)=\sigma^2=n\cdot p(1-p)=n\cdot \frac{1}{6}\cdot \frac{5}{6}=\frac{5\cdot n}{36}$\\
+
+Berechnung der Wahrscheinlichkeit mittels Gegenwahrscheinlichkeit:
+\[\mathbb{P}(x\geq 100)\geq 0.9 = 1-\mathbb{P}(x<100)\geq 0.9 = 1-\mathbb{P}(x\leq 99)\geq 0.9\]
+
+Bessere Approximation mittels Stetigkeitskorrektur: (Obere Grenze +0.5)
+
+\[1-\mathbb{P}(x\leq 99.5)\geq 0.9\Rightarrow -\mathbb{P}(x\leq 99.5)\geq-0.1\Rightarrow\mathbb{P}(x\leq 99.5)\geq0.1\]
+\begin{eqnarray*}\mathbb{P}(x\leq 99.5)&\approx&\Phi\left(\frac{x-\mu}{\sigma}\right)=\Phi\left(\frac{99.5-\frac{n}{6}}{\frac{\sqrt{5n}}{6}}\right)=\Phi\left(\left(99.5-\frac{n}{6}\right){\frac{6}{\sqrt{5n}}}\right)\\
+&=&\Phi\left(\frac{99.5\cdot 6-n}{\sqrt{5n}}\right)\end{eqnarray*}
+
+\[\Phi\left(\frac{99.5\cdot 6-n}{\sqrt{5n}}\right)\leq 0.1\;\Rightarrow\;\frac{99.5\cdot 6-n}{\sqrt{5n}}\leq \Phi^{-1}(0.1)\]
+In der \reference{Standardnormalverteilungstabelle}{Tabelle}{tbl:standardnormalverteilung} den Wert für $\Phi^{-1}(0.1)$ nachsehen, der 0.1 am nächsten kommt: (Achtung: es kommen nur Werte zwischen 0.5 und 1 vor, das bedeutet, man muss $1-x$ berechnen: folglich muss man für $0.9$ nachsehen.)
+
+Dabei bekommt man für $\Phi^{-1}(0.9)=1.28$ heraus, folglich muss $\Phi^{-1}(0.1)=-1.28$ sein.
+
+\[\frac{99.5\cdot 6-n}{\sqrt{5n}}\leq -1.28\;\Rightarrow\;99.5\cdot 6-n\leq -1.28\cdot \sqrt{5n}\;\Rightarrow\;(597-n)^2\leq 1.6384\cdot 5n\]
+\[597^2-1194n+n^2\leq 1.6384\cdot 5n\;\Rightarrow\;597^2-1194n+n^2-8.192\cdot n\leq 0\;\]
+\[\Rightarrow\;356409-1202.192n+n^2\leq 0\]
+
+Mit der \reference{Quadratischen Lösungsformel}{Section}{sec:quadratische_formel} folgt:$n_1=671.1488$ und $n_2=531.0432$.
+
+Es kann aber nur eine von beiden Lösungen stimmen. $\Rightarrow$ herausfinden, welche stimmt, mittels Einsetzen:
+
+\begin{eqnarray*}\Phi\left(\frac{99.5\cdot 6-n_1}{\sqrt{5n}}\right)\;\Rightarrow\;\Phi\left(\frac{99.5\cdot 6-671.1488}{\sqrt{5*671.1488}}\right) &=& \Phi\left(\frac{-74.1488}{57.9287}\right)\\&=&\Phi(-1.2800)\text{ ...richtig}\end{eqnarray*}
+\begin{eqnarray*}\Phi\left(\frac{99.5\cdot 6-n_2}{\sqrt{5n}}\right)\;\Rightarrow\;\Phi\left(\frac{99.5\cdot 6-531.0432}{\sqrt{5*531.0432}}\right) &=& \Phi\left(\frac{65.9568}{51.5287}\right)\\&=&\Phi(1.2800)\text{ ...falsch}\end{eqnarray*}
+
+Mit $671.14\Rightarrow672$ Würfen beträgt die Zahl der 6en (mit einer Wahrscheinlichkeit von 0.9) mindestens 100.
+\end{Answer}
+\end{uebsp}

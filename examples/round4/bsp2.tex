@@ -1,0 +1,46 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:4.2]
+Absorptionswahrscheinlichkeiten: $X_t$ sei eine Markovkette mit dem absorbierenden Zustand $a$. $q_i$ sei die Wahrscheinlichkeit, dass der Prozess irgendwann in $a$ landet, wenn in $i$ gestartet wird. Zeigen Sie, dass gilt:
+
+\[q_a=1,\]
+\[q_i=\sum_ip_{ij}q_j,\]
+\end{Exercise}
+\begin{Answer}
+\begin{uebsp_theory}
+    Der Zustand $j$ heißt \reference{Nachfolger}{Definition}{def:nachfolger} von $i$ ($i\rightarrow j$), wenn es ein $t\ge 0$ gibt, sodass $p_{ij}(t)>0$.\index{Nachfolger!Beispiel}\\
+    Wenn sowohl $i\rightarrow j$ als auch $j\rightarrow i$ gilt, dann heißen $i$ und $j$ verbunden oder kommunizierend.
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Die \reference{Übergangswahrscheinlichkeit}{Section}{sec:uebergangswahrscheinlichkeit} ist definiert als \[p_{ij}\mathbb P(X_{n+1}=j|X_n=i)\] und gibt die Wahrscheinlichkeit des übergangs vom Zustand $i$ zum Zustand $j$ an. \index{"Ubergangswahrscheinlichkeit@Übergangswahrscheinlichkeit!Beispiel}
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Ein \reference{Absorbierender Zustand}{Klasseneigenschaften}{sec:klasseneigenschaften} ist als eigene Klasse definiert.
+    \index{absorbierender Zustand!Beispiel}
+\end{uebsp_theory}
+
+\begin{uebsp_theory}
+    Die \reference{Chapman-Kolmogorovsche Gleichung}{Übergangswahrscheinlichkeiten}{sec:uebergangswahrscheinlichkeit} lauten wie folgt:
+    \index{Chapman-Kolmogorov Gleichungen!Beispiel}
+    \[p_{ij}(s+t)=\sum_{k\in M_X}p_{ik}(s)p_{kj}(t).\]
+\end{uebsp_theory}
+
+\begin{description}
+    \item [$q_a=1$ beweisen]:
+        \begin{eqnarray*}
+            q_a &=& p_{aa}=\sum_{k\in M_X}p_{ak}(s)p_{ka}(t)\;\;\fbox{$\Rightarrow$ Zerlegen der Summe}\\
+                &=& \underbrace{\sum_{\substack{k\in M_X\\k\neq a}}p_{ak}(s)p_{ka}(t)}_{=\text{Die Summe der Wahrscheinlichkeit ohne dem } a}+p_{aa}\cdot p_{aa}=0+p_{aa}\cdot p_{aa}\\
+            q_a &=& p_{aa}\cdot p_{aa}\;\;
+        \end{eqnarray*}
+        Die Summe der Wahrscheinlichkeit von einem Zustand muss immer $1$ sein und nur 1 ergibt mit sich selbst multipliziert wieder $1$.
+        \[q_a = p_{aa} = p_{aa}\cdot p_{aa} = 1\]
+    \item [$q_i=\sum_jp_{ij}q_j$ beweisen]:
+        \begin{eqnarray*}
+            q_i &=& p_{ia} = \sum_{j\in M_X} p_{ij}\underbrace{q_j}_{=p_{ja}}\;\;\fbox{Substituiere: $q_j=p_{ja}$}\\
+            q_i &=& p_{ia} = \sum_{j\in M_X} p_{ij}p_{ja}\;\;\fbox{\parbox{0.6\linewidth}{Das ist aber genau die Chapman-Kolmogorov Gleichung! q.e.d.}}
+        \end{eqnarray*}
+\end{description}
+
+\end{Answer}
+\end{uebsp}

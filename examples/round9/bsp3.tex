@@ -1,0 +1,38 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:9.3]
+Gegeben sei folgende Stichprobe:
+\[1.5\;2.1\;1.3\;1.7\;2.2\;1.1\;1.9\;0.9\;1.4\;1.6\]
+\[1.8\;1.7\;2.3\;1.8\;1.6\;2.0\;1.7\;2.1\;1.8\;1.7\]
+einer Normalverteilung. Testen Sie $H_0:\sigma_0^2\leq 0.1$ gegen $H_1:\sigma^2>0.1$.
+\end{Exercise}
+\begin{Answer}
+\index{Spezielle Tests!Beispiel}
+\index{Tests!für $\sigma$ von $\mathcal N$!Beispiel}
+\index{Korrigierte Stichprobenvarianz!Beispiel}
+\begin{uebsp_theory}
+\reference{Test für die Varianz $\sigma^2$ (für Normalverteilung)}{Kapitel}{sec:spezielle_tests}
+\[T=\frac{S_n^2(n-1)}{\sigma_0^2}\]
+Für $H_0:\sigma^2 \leq\sigma_0^2$ gegen $H_1:\sigma^2>\sigma_0^2$:
+    verwerfen $H_0$, wenn $T>\chi^2_{n-1;1-\alpha}$
+
+Wobei $S_n^2$ definiert ist, als die \reference{korrigierte Stichprobenvarianz}{Definition}{def:korrigierte_stichprobenvarianz}:
+\[s_n^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline x)^2\]
+\end{uebsp_theory}
+\begin{enumerate}[i)]
+\item \textbf{Berechnung des Mittelwertes:}
+\[\overline x_n=\frac{1}{n}\sum_{i=1}^nx_i=\frac{1}{20}\sum_{i=1}^{20}x_i=\frac{34.2}{20}=1.71\]
+\item \textbf{Berechnung der korrigierten Stichprobenvarianz:}
+\begin{eqnarray*}
+s_n^2&=&\frac{1}{19}\sum_{i=1}^{20}(x_i-1.71)^2=\frac{1}{19}((1.5-1.71)^2+(2.1-1.71)^2+...+(1.7-1.71)^2)\\
+s_n^2&=&\frac{2.398}{19}\approx0.1262
+\end{eqnarray*}
+\item \textbf{Berechnung von $T:$}
+\[T=\frac{2.398\cdot(20-1)}{19\cdot \sigma_0^2}=\frac{2.398}{0.1}=23.98>\chi^2_{n-1;1-\alpha}\]
+\item \textbf{$t_{n-1,1-\alpha/2}$ aus der Tabelle bestimmen:}
+Für \reference{Signifikanzniveau}{Definition}{def:signifikanzniveau} $\alpha=0.5$:
+\[\chi^2_{20-1,1-5}=\chi^2_{19,0.95}=30.144\;\leftarrow\framebox{aus \reference{Tabelle}{Anhang}{sec:quantile_chi_verteilung}}\]
+\item \textbf{Ungleichung lösen}
+\[23.98=T>\chi^2_{19,0.95}=30.144\;\Rightarrow\;\framebox{können $H_0$ nicht verwerfen.}\]
+\end{enumerate}
+\end{Answer}
+\end{uebsp}

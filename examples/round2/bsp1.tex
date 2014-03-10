@@ -1,0 +1,43 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.1]
+
+    Die \reference{Poissonverteilung}{Kapitel}{sec:poissonverteilung} $\mathcal P(\lambda)$ hat die Wahrscheinlichkeitsfunktion \\
+
+    \[p\left(x\right)=\frac{{\lambda }^{x}{e}^{-\lambda}}{x!}\left(x\geq 0\right)\]
+ 
+Zeigen Sie, dass dies als Grenzwert der Wahrscheinlichkeitsfunktion der
+\reference{Binomialverteilung}{Kapitel}{sec:binomialverteilung} mit $p = \frac{\lambda}{n}$, $ n \rightarrow \infty$ erhalten werden kann. \\
+
+
+
+\end{Exercise}
+\begin{Answer}
+    \index{Binomialverteilung!Beispiel}
+    \index{Poissonverteilung!Beispiel}
+\begin{uebsp_theory} 
+Die \reference{Binomialverteilung}{Kapitel}{sec:binomialverteilung} $\mathcal B(n,p)$:
+\[p(x)={n\choose x}p^x(1-p)^{n-x}.\]
+und der \reference{Binomialkoeffizient}{Anhang}{sec:binomialkoeffizient}
+\[{n\choose k} = \frac{n!}{k!(n-k)!}\]
+\end{uebsp_theory}
+
+Demnach: \\
+
+\[\mathcal B(k | n,p) = {n\choose k}p^k(1-p)^{n-k} = \textbf{wir ersetzen $p$ durch $\frac{\lambda}{n}$ } = {n\choose k}(\frac{\lambda}{n})^k(1-\frac{\lambda}{n})^{n-k}\]
+\[=\frac{n!}{k!(n-k)!} (\frac{\lambda}{n})^k(1-\frac{\lambda}{n})^{n-k} = \frac{n(n-1)(n-2)...(n-k+1)((n-k)!)}{k!(n-k)!}\frac{\lambda{^k}}{n^{k}}(1-\frac{\lambda}{n})^{n-k} =\]
+\[\frac{n(n-1)(n-2)...(n-k+1)}{n^{k}}\frac{\lambda{^k}}{k!}(1-\frac{\lambda}{n})^{n-k}\]
+Betrachten wir nun zuerst den linken Teil des Ausdrucks: 
+\[\frac{n}{n}\frac{n-1}{n}\frac{n-2}{n}\dots \frac{n-k+1}{n} = 1*(1-\frac{1}{n})(1-\frac{2}{n}) * \dots * (1-\frac{k+1}{n})\]
+Bilden wir nun davon den $\lim_{n \to \infty}$ vereinfacht sich der linke Teilausdruck zu $1$.
+
+Nun betrachten wir den verbleibenden rechten Teilausdruck
+\[\frac{\lambda^{k}}{k!}(1-\frac{\lambda}{n})^{n-k} = \frac{\lambda^{k}}{k!}(1-\frac{\lambda}{n})^{n} (1-\frac{\lambda}{n})^{-k}\]
+Bilden wir nun auch hier den $\lim_{n \to \infty}$ wird $(1-\frac{\lambda}{n})^{-k}$ zu 1. Mit dem Wissen, dass:
+\begin{uebsp_theory} 
+$e^{x} = \lim_{n \to \infty}(1+\frac{x}{n})^{n}$
+\end{uebsp_theory}
+
+Erhalten wir, wie erhofft:
+\[\lim_{n \to \infty} B(k | n,\frac{\lambda}{n}) = p\left(k\right)=\frac{{\lambda }^{k}{e}^{-\lambda}}{k!}\]
+\end{Answer}
+\end{uebsp}

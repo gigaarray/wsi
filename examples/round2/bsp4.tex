@@ -1,0 +1,67 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:2.4]
+$X$ und $Y$ seien unabhängig gleichverteilt auf $[0, 1]$. Bestimmen Sie die Verteilung von $X + Y$ .
+\end{Exercise}
+\begin{Answer}
+    \index{Gleichverteilung!Beispiel}
+    \index{Unabhängigkeit!Verteilung!Beispiel}
+    \index{Faltung von Dichten!Beispiel}
+
+\begin{uebsp_theory}
+    Die Wahrscheinlichkeitsfunktion der \reference{diskreten Gleichverteilung}{Kapitel}{sec:gleichverteilung_diskret} ist wie folgt definiert:
+    \[\frac{1}{b-a}\;\;\forall a\leq x\leq b\]
+    Für zwei \reference{unabhängigie Zufallsvariablen $(X,Y)$}{Definition}{def:unabhaengigkeit_verteilung} gilt: 
+    \[p(x)=F_{X,Y}(x,y)=F_{X}(x)\cdot F_Y(y).\]
+
+    Außerdem gilt, für \reference{die gemeinsame Dichte}{Satz}{satz:faltung_dichten}: 
+    \[f_{x+y}=\underbrace{f_X*f_Y(z)}_{\text{Faltung}}=\int_{-\infty}^{\infty}f_X(x)\cdot f_Y(z-x)dx\]
+\end{uebsp_theory}
+
+D.h.: als Ausgangssituation haben wir:
+\[ f_X(x) = \left\{
+  \begin{array}{l l}
+    1 & \quad \text{für $x \in [0,1]$}\\
+    0 & \quad \text{sonst}
+  \end{array} \right.\]
+  
+\[ f_Y(y) = \left\{
+    \begin{array}{l l}
+      1 & \quad \text{für $y \in [0,1]$}\\
+      0 & \quad \text{sonst}
+    \end{array} \right.\]
+
+Wir führen eine neue Variable ein: $Z=X+Y \Rightarrow Y=Z-X \Rightarrow z \in [0,2]$
+
+\begin{uebsp_theory}
+    Wenn die gemeinsame Verteilung diskret bzw. stetig ist, kann man in dieser
+    Definition von den zwei Zufallsvariablen(vorher) die Verteilungsfunktion durch die Wahrscheinlichkeits- bzw. Dichte-
+    funktion ersetzen:
+    \[f_{X,Y}(x,y)=f_{X}(x)\cdot f_Y(y).\]
+    \reference{}{Definition}{def:unabhaengigkeit_verteilung}
+\end{uebsp_theory}
+
+$f_{X,Y}=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)dx = f_Z(z)$ \\
+Wir betrachten nur das Integral von $0$ bis $1$ da außerhalb $f_X(x)=0$ für alle gilt:\\
+$f_Z(z) = \int_{0}^{1} \underbrace{f_X(x)}_{=1}f_Y(z-x)dx  $\\ \\
+Innerhalb des Intervalls [0,1] ist $f_X(x)=1$ für alle x. \\
+$f_Z(z)=\int_{0}^{1}f_Y(z-x)dx$ \\
+Da $y \in [0,1] \Rightarrow (z-x) \in [0,1] $ dies führt auf 2 Fälle:
+
+\begin{enumerate}
+\item{$z \in [0,1[:  z-x \ge 0\Rightarrow z \ge x $ \\ \\ $f_{(X+Y)_1}(z)=\int_{0}^{z}1dx=z$ } 
+        \item{$z \in [1,2[: z-x  \le 1 \text{ damit } f_Y = 1\\ z-1\le x$\\
+$f_{(X+Y)_2}(z)=\int_{z-1}^{1}1dx=1-(z-1)=2-z$} 
+\end{enumerate}
+
+Insgesamt ergibt sich also:\\ \\
+
+
+\[ f_{X+Y}(z) = \left\{
+    \begin{array}{l l}
+      z & \quad \text{für $0 \le z < 1$}\\
+      2-z & \quad \text{für $1 \le z <2$}\\
+      0 & \quad \text{sonst}
+    \end{array} \right.\]
+
+\end{Answer}
+\end{uebsp}

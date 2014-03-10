@@ -1,0 +1,39 @@
+\begin{uebsp}
+\begin{Exercise}[label=ex:7.7]
+$X_1,...,X_n$ ist eine Stichprobe einer Verteilung mit der Dichte
+\[f(x,\theta)=\theta x^{\theta-1}[0\leq x\leq 1]\]
+Bestimmen Sie den Maximum-Likelihood-Schätzer.
+\end{Exercise}
+\begin{Answer}
+\index{Maximum-Likelihood-Schätzer!Beispiel}
+\index{Log-Likelihood-Funktion!Beispiel}
+\index{Multiplikationssatz für Likelihood-Funktionen!Beispiel}
+
+\begin{uebsp_theory}
+Die \reference{Likelihoodfunktion}{Definition}{def:likelihoodfunktion} in unserem Fall (stetige Zufallsvariable) ist definiert, als 
+\[L(X;\theta)=f_\theta(X)\;\;\text{ bzw. }\;\;\ln L(X;\theta)=l(X;\theta)\]
+und da es sich um unabhängige Zufallsvariablen $X$ handelt, gilt der \reference{Multiplikationssatz}{Definition}{def:multiplikationssatz_likelihood}
+\[L(\vec X;\theta)=\prod_{i=1}^nf_\theta(X)\]
+bzw. für die Log-Likelihood:
+\[\ln L(\vec X;\theta)=l(\vec X;\theta)=\sum_{i=1}^nl(X_i;\theta)\]
+\end{uebsp_theory}
+\begin{enumerate}[i)]
+    \item \textbf{Likelihood-Funktion zusammenbauen:}
+    Ein bisschen Umformen mit den \reference{Logarithmusregeln}{Anhang}{sec:logarithmus}:
+        \begin{eqnarray*}
+            l(\vec x;\theta)&=&\sum_{i=1}^n\ln f(x_i) = \sum_{i=1}^n\ln \theta\cdot x_i^{\theta-1} = \sum_{i=1}^n\ln \theta + (\theta-1)\ln x_i\\
+            l(\vec x;\theta)&=&n\cdot\ln\theta +(\theta-1)\sum_{i=1}^n \ln x_i
+        \end{eqnarray*}
+    \item \textbf{Ableiten der Likelihood-Funktion:}
+        \begin{eqnarray*}
+            \frac{\partial l(\vec x;\theta)}{\partial\theta}&=&\frac{\partial(n\cdot\ln\theta +(\theta-1)\sum_{i=1}^n \ln x_i)}{\partial\theta}=\\
+            \frac{\partial l(\vec x;\theta)}{\partial\theta}&=&\frac{\partial(n\cdot\ln\theta)}{\partial\theta} +\frac{\partial(\theta\sum_{i=1}^n \ln x_i)}{\partial\theta}-\frac{\partial(\sum_{i=1}^n \ln x_i)}{\partial\theta}\\
+            \frac{\partial l(\vec x;\theta)}{\partial\theta}&=&\frac{n}{\theta} +\sum_{i=1}^n \ln x_i
+        \end{eqnarray*}
+    \item \textbf{Ableitung=0 für Maximum und auf $\theta$ umstellen}
+        \[\frac{\partial l(\vec x;\theta)}{\partial\theta}=0=\frac{n}{\theta} +\sum_{i=1}^n \ln x_i\;\Leftrightarrow\;\frac{n}{\theta}=-\sum_{i=1}^n \ln x_i\]
+        \[\hat\theta_n=-\frac{n}{\sum_{i=1}^n \ln x_i}\]
+\end{enumerate}
+   
+\end{Answer}
+\end{uebsp}
